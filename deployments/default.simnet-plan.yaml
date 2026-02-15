@@ -1,0 +1,60 @@
+---
+id: 0
+name: "Simulated deployment, used as a default for `clarinet console`, `clarinet test` and `clarinet check`"
+network: simnet
+genesis:
+  wallets:
+    - name: deployer
+      address: ST3N7D4F8TDBNPAN7W6CJ5RGF5DAW5MGHNEGTCR6R
+      balance: "0"
+      sbtc-balance: "1000000000"
+  contracts:
+    - genesis
+    - lockup
+    - bns
+    - cost-voting
+    - costs
+    - pox
+    - costs-2
+    - pox-2
+    - costs-3
+    - pox-3
+    - pox-4
+    - signers
+    - signers-voting
+    - costs-4
+plan:
+  batches:
+    - id: 0
+      transactions:
+        - emulated-contract-publish:
+            contract-name: sip009-nft-trait
+            emulated-sender: ST3N7D4F8TDBNPAN7W6CJ5RGF5DAW5MGHNEGTCR6R
+            path: contracts/sip009-nft-trait.clar
+            clarity-version: 4
+        - emulated-contract-publish:
+            contract-name: mini-joy-rare-1
+            emulated-sender: ST3N7D4F8TDBNPAN7W6CJ5RGF5DAW5MGHNEGTCR6R
+            path: contracts/mini-joy-rare-1.clar
+            clarity-version: 4
+        - emulated-contract-publish:
+            contract-name: mini-joy-rare-2
+            emulated-sender: ST3N7D4F8TDBNPAN7W6CJ5RGF5DAW5MGHNEGTCR6R
+            path: contracts/mini-joy-rare-2.clar
+            clarity-version: 4
+        - emulated-contract-publish:
+            contract-name: mini-joy-rare-3
+            emulated-sender: ST3N7D4F8TDBNPAN7W6CJ5RGF5DAW5MGHNEGTCR6R
+            path: contracts/mini-joy-rare-3.clar
+            clarity-version: 4
+        - emulated-contract-publish:
+            contract-name: mini-joy-rare-4
+            emulated-sender: ST3N7D4F8TDBNPAN7W6CJ5RGF5DAW5MGHNEGTCR6R
+            path: contracts/mini-joy-rare-4.clar
+            clarity-version: 4
+        - emulated-contract-publish:
+            contract-name: mini-joy-rare-5
+            emulated-sender: ST3N7D4F8TDBNPAN7W6CJ5RGF5DAW5MGHNEGTCR6R
+            path: contracts/mini-joy-rare-5.clar
+            clarity-version: 4
+      epoch: "3.3"

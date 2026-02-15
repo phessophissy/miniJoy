@@ -1,0 +1,57 @@
+[project]
+name = 'miniJoy'
+description = 'miniJoy: 5 rare NFTs on Stacks, one contract per NFT.'
+authors = []
+telemetry = false
+cache_dir = './.cache'
+requirements = []
+
+[contracts.sip009-nft-trait]
+path = 'contracts/sip009-nft-trait.clar'
+clarity_version = 4
+epoch = 'latest'
+
+[contracts.mini-joy-rare-1]
+path = 'contracts/mini-joy-rare-1.clar'
+clarity_version = 4
+epoch = 'latest'
+depends_on = ['sip009-nft-trait']
+
+[contracts.mini-joy-rare-2]
+path = 'contracts/mini-joy-rare-2.clar'
+clarity_version = 4
+epoch = 'latest'
+depends_on = ['sip009-nft-trait']
+
+[contracts.mini-joy-rare-3]
+path = 'contracts/mini-joy-rare-3.clar'
+clarity_version = 4
+epoch = 'latest'
+depends_on = ['sip009-nft-trait']
+
+[contracts.mini-joy-rare-4]
+path = 'contracts/mini-joy-rare-4.clar'
+clarity_version = 4
+epoch = 'latest'
+depends_on = ['sip009-nft-trait']
+
+[contracts.mini-joy-rare-5]
+path = 'contracts/mini-joy-rare-5.clar'
+clarity_version = 4
+epoch = 'latest'
+depends_on = ['sip009-nft-trait']
+
+[repl.analysis]
+passes = ['check_checker']
+
+[repl.analysis.lints]
+
+[repl.analysis.check_checker]
+strict = false
+trusted_sender = false
+trusted_caller = false
+callee_filter = false
+
+[repl.remote_data]
+enabled = false
+api_url = 'https://api.hiro.so'

@@ -1,119 +1,85 @@
-# 🪵 MiniNFT
+# miniJoy
 
-A collection of 1005 unique NFTs on Base Chain with micro-pricing and a warm wooden theme.
+miniJoy is a Stacks (Bitcoin L2) NFT project forked from `miniNFT` and redesigned for Clarity.
 
-![MiniNFT Banner](https://img.shields.io/badge/Base-Chain-blue) ![License](https://img.shields.io/badge/License-MIT-green) ![NFTs](https://img.shields.io/badge/NFTs-505-purple)
+## What Changed
 
-## ✨ Features
+- Migrated from Base/EVM Solidity to Stacks/Clarity.
+- Split the 5 rare NFTs into 5 separate smart contracts.
+- Added per-contract mint fee in STX between `0.0001` and `0.001 STX`.
+- Project renamed to `miniJoy`.
 
-- **1005 Unique NFTs** - Each NFT is uniquely generated
-- **Random Minting** - Get a random NFT from the collection
-- **Micro Price** - Only 0.000001 ETH per mint
-- **Wooden Theme** - Rich, organic design with dynamic animations
-- **Atmospheric Effects** - Smoke, embers, and falling leaves
-- **Interactive UI** - Carved wood buttons and glowing inputs
-- **Batch Minting** - Mint up to 10 NFTs at once
-- **5 Rarity Tiers** - Common, Uncommon, Rare, Epic, Legendary
-- **Base Chain** - Low gas fees on Ethereum L2
+## Contracts
 
-## 🚀 Quick Start
+Each contract deploys to its own contract address (for example: `SP... .mini-joy-rare-1`).
 
-### Prerequisites
+| Contract | Fee (microSTX) | Fee (STX) | Supply |
+|---|---:|---:|---:|
+| `mini-joy-rare-1` | `100` | `0.0001` | `1` |
+| `mini-joy-rare-2` | `250` | `0.00025` | `1` |
+| `mini-joy-rare-3` | `500` | `0.0005` | `1` |
+| `mini-joy-rare-4` | `750` | `0.00075` | `1` |
+| `mini-joy-rare-5` | `1000` | `0.001` | `1` |
 
-- [Node.js](https://nodejs.org/) (v18+)
-- [Foundry](https://getfoundry.sh/)
+Notes:
+- `1 STX = 1,000,000 microSTX`.
+- The minimum mint fee in this range is `100 microSTX` (`0.0001 STX`).
 
-### Smart Contract
+## Deployer Wallet
+
+Mainnet deployment sender is set to:
+- `SP2KYZRNME33Y39GP3RKC90DQJ45EF1N0NZNVRE09`
+
+Expected mainnet contract IDs:
+- `SP2KYZRNME33Y39GP3RKC90DQJ45EF1N0NZNVRE09.sip009-nft-trait`
+- `SP2KYZRNME33Y39GP3RKC90DQJ45EF1N0NZNVRE09.mini-joy-rare-1`
+- `SP2KYZRNME33Y39GP3RKC90DQJ45EF1N0NZNVRE09.mini-joy-rare-2`
+- `SP2KYZRNME33Y39GP3RKC90DQJ45EF1N0NZNVRE09.mini-joy-rare-3`
+- `SP2KYZRNME33Y39GP3RKC90DQJ45EF1N0NZNVRE09.mini-joy-rare-4`
+- `SP2KYZRNME33Y39GP3RKC90DQJ45EF1N0NZNVRE09.mini-joy-rare-5`
+
+## Project Structure
+
+```text
+contracts/
+  sip009-nft-trait.clar
+  mini-joy-rare-1.clar
+  mini-joy-rare-2.clar
+  mini-joy-rare-3.clar
+  mini-joy-rare-4.clar
+  mini-joy-rare-5.clar
+settings/
+  Devnet.toml
+  Testnet.toml
+  Mainnet.toml
+Clarinet.toml
+```
+
+## Local Checks
 
 ```bash
-# Install dependencies
-forge install
-
-# Build
-forge build
-
-# Test
-forge test
-
-# Deploy (update .env first)
-forge script script/DeployMiniNFT.s.sol --rpc-url base --broadcast
+npm run check
 ```
 
-### Frontend
+## Deploy to Mainnet
+
+1. Replace mnemonic in `settings/Mainnet.toml` with the seed phrase for `SP2KYZRNME33Y39GP3RKC90DQJ45EF1N0NZNVRE09`.
+2. Generate deployment plan:
 
 ```bash
-cd frontend
-
-# Install dependencies
-npm install
-
-# Run development server
-npm run dev
+npm run deploy:generate
 ```
 
-## 📜 Contract Details
+3. Apply deployment:
 
-| Property | Value |
-|----------|-------|
-| Network | Base Mainnet |
-| Contract | `0x80203c0838a1cABe0eAbc0aC9e22f6Abd512cAa9` |
-| Max Supply | 1005 |
-| Mint Price | 0.000001 ETH |
-| Max per Batch | 10 |
-
-## 🏗️ Architecture
-
-```
-miniNFT/
-├── src/
-│   └── MiniNFT.sol          # Main NFT contract
-├── test/
-│   └── MiniNFT.t.sol        # Foundry tests
-├── frontend/
-│   ├── src/
-│   │   ├── components/      # React components
-│   │   ├── hooks/           # Custom hooks
-│   │   ├── App.jsx          # Main app
-│   │   └── contract.js      # Contract config
-│   └── package.json
-└── foundry.toml
+```bash
+npm run deploy
 ```
 
-## 🔧 Contract Functions
+## Contract Interface
 
-### Read Functions
-- `remainingSupply()` - Get available NFTs count
-- `totalSupply()` - Get minted NFTs count
-- `balanceOf(address)` - Get user's NFT count
-- `tokenURI(uint256)` - Get NFT metadata URI
-
-### Write Functions
-- `mint()` - Mint 1 random NFT (0.00001 ETH)
-- `mintBatch(quantity)` - Mint multiple NFTs (max 10)
-
-### Owner Functions
-- `setBaseURI(string)` - Update metadata URI
-- `withdraw()` - Withdraw contract balance
-
-## 🎨 NFT Rarity Distribution
-
-| Tier | Probability | Count |
-|------|-------------|-------|
-| Common | 40% | ~402 |
-| Uncommon | 30% | ~302 |
-| Rare | 18% | ~181 |
-| Epic | 9% | ~90 |
-| Legendary | 3% | ~30 |
-
-## 🔗 Links
-
-- [Contract on BaseScan](https://basescan.org/address/0x80203c0838a1cABe0eAbc0aC9e22f6Abd512cAa9)
-- [OpenSea Collection](https://opensea.io/collection/mininft)
-
-## 📄 License
-
-MIT License - see [LICENSE](LICENSE) for details.
-
----
-
-Built with ❤️ on Base Chain
+Each `mini-joy-rare-*` contract includes:
+- `mint()` to mint and pay the configured STX fee.
+- `transfer(token-id, sender, recipient)` for SIP-009 transfer compatibility.
+- `get-last-token-id()`, `get-token-uri(token-id)`, `get-owner(token-id)`.
+- `get-mint-fee()` and `get-rarity-label()` convenience readers.

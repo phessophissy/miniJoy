@@ -1,24 +1,23 @@
 {
-  "name": "mininft",
+  "name": "minijoy",
   "version": "1.0.0",
-  "description": "MiniNFT - A collection of 1005 unique NFTs on Base",
+  "description": "miniJoy on Stacks with 5 rare NFT contracts",
   "scripts": {
-    "generate-metadata": "node scripts/generateMetadata.js",
-    "mint": "node scripts/mint.js",
-    "deploy": "source .env && ~/.foundry/bin/forge script script/DeployMiniNFT.s.sol --rpc-url $BASE_RPC_URL --broadcast --verify",
-    "build": "~/.foundry/bin/forge build",
-    "test": "~/.foundry/bin/forge test",
-    "wallet-gen": "node scripts/generateWallets.js"
-  },
-  "dependencies": {
-    "dotenv": "^17.2.3",
-    "ethers": "^6.16.0"
+    "check": "clarinet check",
+    "console": "clarinet console",
+    "test": "clarinet check",
+    "deploy:generate": "clarinet deployments generate --mainnet --manual-cost",
+    "deploy": "clarinet deployments apply --mainnet --use-on-disk-deployment-plan",
+    "deploy:generate:testnet": "clarinet deployments generate --testnet --manual-cost",
+    "deploy:generate:mainnet": "clarinet deployments generate --mainnet --manual-cost",
+    "deploy:testnet": "clarinet deployments apply --testnet --use-on-disk-deployment-plan",
+    "deploy:mainnet": "clarinet deployments apply --mainnet --use-on-disk-deployment-plan"
   },
   "keywords": [
+    "stacks",
+    "bitcoin-l2",
     "nft",
-    "base",
-    "ethereum",
-    "web3"
+    "clarity"
   ],
   "author": "",
   "license": "MIT"

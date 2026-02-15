@@ -1,0 +1,8 @@
+[network]
+name = 'devnet'
+node_rpc_address = 'http://localhost:20443'
+deployment_fee_rate = 10
+
+[accounts.deployer]
+# For local devnet only.
+mnemonic = '<REPLACE_WITH_DEVNET_MNEMONIC>'

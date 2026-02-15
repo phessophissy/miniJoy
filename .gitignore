@@ -1,15 +1,3 @@
-# Compiler files
-cache/
-out/
-
-# Ignores development broadcast logs
-!/broadcast
-/broadcast/*/31337/
-/broadcast/**/dry-run/
-
-# Docs
-docs/
-
 # Dotenv files
 .env
 .env.*
@@ -18,26 +6,11 @@ docs/
 # Node modules
 node_modules/
 
-# Scripts folder - allow scripts but ignore sensitive wallet data
-# scripts/
-scripts/wallets.json
-scripts/*.key
-scripts/*.secret
-
-# Foundry script folder (deployment scripts)
-script/
-
-# Minting results (may contain wallet info)
-minting_results*.json
-
-# Flattened contracts (not needed)
-*_Flattened.sol
-
-# Frontend build artifacts
-frontend/node_modules/
-frontend/dist/
-frontend/.env
-frontend/.env.*
+# Local deployment settings (keep out of git)
+settings/Mainnet.toml
+settings/Testnet.toml
+settings/Devnet.toml
+settings/Simnet.toml
 
 # OS files
 .DS_Store
@@ -52,7 +25,3 @@ Thumbs.db
 # Logs
 *.log
 npm-debug.log*
-
-# Lock files (optional, can include if you want reproducible builds)
-# package-lock.json
-# foundry.lock

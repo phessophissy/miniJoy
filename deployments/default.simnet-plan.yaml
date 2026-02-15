@@ -5,7 +5,7 @@ network: simnet
 genesis:
   wallets:
     - name: deployer
-      address: ST3N7D4F8TDBNPAN7W6CJ5RGF5DAW5MGHNEGTCR6R
+      address: STC5KHM41H6WHAST7MWWDD807YSPRQKJ68T330BQ
       balance: "0"
       sbtc-balance: "1000000000"
   contracts:
@@ -29,32 +29,32 @@ plan:
       transactions:
         - emulated-contract-publish:
             contract-name: sip009-nft-trait
-            emulated-sender: ST3N7D4F8TDBNPAN7W6CJ5RGF5DAW5MGHNEGTCR6R
+            emulated-sender: STC5KHM41H6WHAST7MWWDD807YSPRQKJ68T330BQ
             path: contracts/sip009-nft-trait.clar
             clarity-version: 4
         - emulated-contract-publish:
             contract-name: mini-joy-rare-1
-            emulated-sender: ST3N7D4F8TDBNPAN7W6CJ5RGF5DAW5MGHNEGTCR6R
+            emulated-sender: STC5KHM41H6WHAST7MWWDD807YSPRQKJ68T330BQ
             path: contracts/mini-joy-rare-1.clar
             clarity-version: 4
         - emulated-contract-publish:
             contract-name: mini-joy-rare-2
-            emulated-sender: ST3N7D4F8TDBNPAN7W6CJ5RGF5DAW5MGHNEGTCR6R
+            emulated-sender: STC5KHM41H6WHAST7MWWDD807YSPRQKJ68T330BQ
             path: contracts/mini-joy-rare-2.clar
             clarity-version: 4
         - emulated-contract-publish:
             contract-name: mini-joy-rare-3
-            emulated-sender: ST3N7D4F8TDBNPAN7W6CJ5RGF5DAW5MGHNEGTCR6R
+            emulated-sender: STC5KHM41H6WHAST7MWWDD807YSPRQKJ68T330BQ
             path: contracts/mini-joy-rare-3.clar
             clarity-version: 4
         - emulated-contract-publish:
             contract-name: mini-joy-rare-4
-            emulated-sender: ST3N7D4F8TDBNPAN7W6CJ5RGF5DAW5MGHNEGTCR6R
+            emulated-sender: STC5KHM41H6WHAST7MWWDD807YSPRQKJ68T330BQ
             path: contracts/mini-joy-rare-4.clar
             clarity-version: 4
         - emulated-contract-publish:
             contract-name: mini-joy-rare-5
-            emulated-sender: ST3N7D4F8TDBNPAN7W6CJ5RGF5DAW5MGHNEGTCR6R
+            emulated-sender: STC5KHM41H6WHAST7MWWDD807YSPRQKJ68T330BQ
             path: contracts/mini-joy-rare-5.clar
             clarity-version: 4
       epoch: "3.3"

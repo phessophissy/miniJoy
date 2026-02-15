@@ -49,9 +49,10 @@ contracts/
   mini-joy-rare-4.clar
   mini-joy-rare-5.clar
 settings/
-  Devnet.toml
-  Testnet.toml
-  Mainnet.toml
+  Simnet.toml.example
+  Devnet.toml.example
+  Testnet.toml.example
+  Mainnet.toml.example
 Clarinet.toml
 ```
 
@@ -63,14 +64,15 @@ npm run check
 
 ## Deploy to Mainnet
 
-1. Replace mnemonic in `settings/Mainnet.toml` with the seed phrase for `SP2KYZRNME33Y39GP3RKC90DQJ45EF1N0NZNVRE09`.
-2. Generate deployment plan:
+1. Run `npm run settings:init` to create local `settings/*.toml` files from templates.
+2. Replace mnemonic in `settings/Mainnet.toml` with the seed phrase for `SP2KYZRNME33Y39GP3RKC90DQJ45EF1N0NZNVRE09`.
+3. Generate deployment plan:
 
 ```bash
 npm run deploy:generate
 ```
 
-3. Apply deployment:
+4. Apply deployment:
 
 ```bash
 npm run deploy

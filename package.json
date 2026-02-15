@@ -3,15 +3,16 @@
   "version": "1.0.0",
   "description": "miniJoy on Stacks with 5 rare NFT contracts",
   "scripts": {
-    "check": "clarinet check",
+    "settings:init": "for n in Simnet Devnet Testnet Mainnet; do [ -f settings/$n.toml ] || cp settings/$n.toml.example settings/$n.toml; done",
+    "check": "npm run settings:init && clarinet check",
     "console": "clarinet console",
-    "test": "clarinet check",
-    "deploy:generate": "clarinet deployments generate --mainnet --manual-cost",
-    "deploy": "clarinet deployments apply --mainnet --use-on-disk-deployment-plan",
-    "deploy:generate:testnet": "clarinet deployments generate --testnet --manual-cost",
-    "deploy:generate:mainnet": "clarinet deployments generate --mainnet --manual-cost",
-    "deploy:testnet": "clarinet deployments apply --testnet --use-on-disk-deployment-plan",
-    "deploy:mainnet": "clarinet deployments apply --mainnet --use-on-disk-deployment-plan"
+    "test": "npm run check",
+    "deploy:generate": "npm run settings:init && clarinet deployments generate --mainnet --manual-cost",
+    "deploy": "npm run settings:init && clarinet deployments apply --mainnet --use-on-disk-deployment-plan",
+    "deploy:generate:testnet": "npm run settings:init && clarinet deployments generate --testnet --manual-cost",
+    "deploy:generate:mainnet": "npm run settings:init && clarinet deployments generate --mainnet --manual-cost",
+    "deploy:testnet": "npm run settings:init && clarinet deployments apply --testnet --use-on-disk-deployment-plan",
+    "deploy:mainnet": "npm run settings:init && clarinet deployments apply --mainnet --use-on-disk-deployment-plan"
   },
   "keywords": [
     "stacks",

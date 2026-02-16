@@ -290,11 +290,14 @@
 .mint-log li {
   padding: 0.7rem 0.8rem;
   display: grid;
-  grid-template-columns: 1.4fr 0.8fr 0.8fr;
+  grid-template-columns: 1.2fr 0.75fr 0.8fr 0.6fr;
   gap: 0.45rem;
   border-radius: 12px;
   background: rgba(43, 23, 13, 0.58);
   color: var(--text-muted);
+}
+.mint-log small {
+  text-align: right;
 }
 .mint-log .empty-log {
   grid-template-columns: 1fr;

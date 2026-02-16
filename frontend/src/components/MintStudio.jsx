@@ -19,7 +19,7 @@ function MintStudio({ network, setNetwork }) {
     if (!selectedContract) return
     const log = {
       id: crypto.randomUUID(),
-      timestamp: new Date().toISOString(),
+      timestamp: new Date().toLocaleTimeString(),
       contractName: selectedContract.name,
       fee: selectedContract.feeStx,
       network,

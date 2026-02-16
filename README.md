@@ -62,6 +62,13 @@ Clarinet.toml
 npm run check
 ```
 
+## Frontend
+
+```bash
+npm run frontend:install
+npm run frontend:dev
+```
+
 ## Deploy to Mainnet
 
 1. Run `npm run settings:init` to create local `settings/*.toml` files from templates.

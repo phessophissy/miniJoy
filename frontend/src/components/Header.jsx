@@ -6,8 +6,13 @@ function Header() {
   return (
     <header className="top-header section" aria-label="MiniJoy header">
       <div className="brand-wrap">
-        <p className="eyebrow">miniJoy</p>
-        <strong className="brand-title">Wooden Rare NFTs</strong>
+        <div className="brand-line">
+          <img src="/wood-mark.svg" alt="" aria-hidden="true" />
+          <div>
+            <p className="eyebrow">miniJoy</p>
+            <strong className="brand-title">Wooden Rare NFTs</strong>
+          </div>
+        </div>
       </div>
       <button className="menu-button" type="button" onClick={() => setOpen((value) => !value)}>
         Menu

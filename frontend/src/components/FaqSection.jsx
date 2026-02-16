@@ -1,3 +1,5 @@
+import SectionTitle from './SectionTitle'
+
 const entries = [
   {
     q: 'Why are there five contracts?',
@@ -16,7 +18,7 @@ const entries = [
 function FaqSection() {
   return (
     <section className="section" id="faq" aria-label="Frequently asked questions">
-      <h2>FAQ</h2>
+      <SectionTitle title="FAQ" description="Quick answers for deployment and minting flow." />
       <div className="faq-list">
         {entries.map((entry) => (
           <article key={entry.q} className="faq-item">

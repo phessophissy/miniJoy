@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react'
 import { rareContracts } from '../data/contracts'
 import { formatStx, toContractId } from '../utils/format'
 import NetworkSelector from './NetworkSelector'
+import SectionTitle from './SectionTitle'
 
 function MintStudio({ network, setNetwork }) {
   const [selectedId, setSelectedId] = useState(rareContracts[0].id)
@@ -26,8 +27,11 @@ function MintStudio({ network, setNetwork }) {
 
   return (
     <section className="section" id="mint" aria-label="Mint studio">
-      <h2>Mint Studio</h2>
-      <p className="lead">Connect your Stacks wallet in Hiro and call `mint` on any rare contract.</p>
+      <SectionTitle
+        eyebrow="Action"
+        title="Mint Studio"
+        description="Connect your Stacks wallet in Hiro and call `mint` on any rare contract."
+      />
       <div className="mint-controls">
         <NetworkSelector network={network} onChange={setNetwork} />
         <label>

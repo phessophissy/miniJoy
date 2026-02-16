@@ -52,3 +52,35 @@
   max-width: 56ch;
   color: var(--text-muted);
 }
+.contracts-grid {
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+}
+.contract-card {
+  border-radius: 14px;
+  border: 1px solid rgba(237, 198, 148, 0.3);
+  background: linear-gradient(160deg, rgba(96, 56, 32, 0.55), rgba(56, 29, 18, 0.55));
+  padding: 0.95rem;
+  display: grid;
+  gap: 0.4rem;
+}
+.contract-card h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+.contract-rarity {
+  margin: 0;
+  color: var(--accent-gold);
+}
+.contract-fee,
+.contract-fee-sub {
+  margin: 0;
+  color: var(--text-muted);
+}
+.contract-card code {
+  overflow-wrap: anywhere;
+  font-size: 0.76rem;
+  color: var(--wood-100);
+}

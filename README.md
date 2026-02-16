@@ -8,6 +8,7 @@ miniJoy is a Stacks (Bitcoin L2) NFT project forked from `miniNFT` and redesigne
 - Split the 5 rare NFTs into 5 separate smart contracts.
 - Added per-contract mint fee in STX between `0.0001` and `0.001 STX`.
 - Project renamed to `miniJoy`.
+- uses @stacks/connect and @stacks/transactions
 
 ## Contracts
 

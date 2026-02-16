@@ -84,3 +84,52 @@
   font-size: 0.76rem;
   color: var(--wood-100);
 }
+.mint-controls {
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+.mint-controls label,
+.network-control {
+  display: grid;
+  gap: 0.35rem;
+  color: var(--text-muted);
+  font-size: 0.88rem;
+}
+.mint-controls select {
+  border-radius: 12px;
+  border: 1px solid rgba(236, 199, 151, 0.35);
+  background: rgba(62, 34, 21, 0.95);
+  color: var(--text-main);
+  padding: 0.58rem 0.7rem;
+}
+.mint-preview {
+  margin-top: 1rem;
+  padding: 0.95rem;
+  border-radius: 14px;
+  background: rgba(40, 22, 13, 0.6);
+  border: 1px solid rgba(236, 199, 151, 0.25);
+}
+.mint-preview p {
+  margin: 0 0 0.55rem;
+}
+.mint-preview code {
+  overflow-wrap: anywhere;
+}
+.mint-log {
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+  display: grid;
+  gap: 0.5rem;
+}
+.mint-log li {
+  padding: 0.7rem 0.8rem;
+  display: grid;
+  grid-template-columns: 1.4fr 0.8fr 0.8fr;
+  gap: 0.45rem;
+  border-radius: 12px;
+  background: rgba(43, 23, 13, 0.58);
+  color: var(--text-muted);
+}

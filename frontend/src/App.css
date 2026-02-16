@@ -56,6 +56,51 @@
   margin: 0;
   font-size: clamp(2rem, 5vw, 3.25rem);
 }
+.hero {
+  position: relative;
+  overflow: hidden;
+}
+.embers {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.embers span {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: radial-gradient(circle, var(--accent-glow), transparent 70%);
+  animation: float-up 5s linear infinite;
+  opacity: 0;
+}
+.embers span:nth-child(1) {
+  left: 12%;
+  bottom: -10px;
+}
+.embers span:nth-child(2) {
+  left: 48%;
+  bottom: -14px;
+  animation-delay: 1.2s;
+}
+.embers span:nth-child(3) {
+  left: 76%;
+  bottom: -8px;
+  animation-delay: 2.4s;
+}
+@keyframes float-up {
+  0% {
+    transform: translateY(0) scale(0.9);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(-120px) scale(1.1);
+    opacity: 0;
+  }
+}
 .eyebrow {
   margin: 0 0 0.4rem;
   color: var(--accent-gold);

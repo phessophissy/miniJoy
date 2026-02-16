@@ -1,7 +1,7 @@
 const steps = [
-  'Open Hiro Sandbox and deploy the miniJoy contracts.',
+  'Open Hiro Sandbox or your preferred Stacks wallet environment.',
   'Copy the contract ID from the card in this UI.',
-  'Call the public `mint` function with the exact fee for the selected rarity.',
+  'Connect wallet using @stacks/connect and submit a `mint` call.',
   'Verify ownership using `get-owner` with token id `u1`.',
 ]
 

@@ -1,30 +1,97 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { rareContracts } from '../data/contracts'
 import { formatStx, toContractId } from '../utils/format'
 import MintIntentItem from './MintIntentItem'
 import NetworkSelector from './NetworkSelector'
 import SectionTitle from './SectionTitle'
 import WalletConnectPanel from './WalletConnectPanel'
+import { callMint, connectWallet, disconnectWallet, getWalletState } from '../lib/stacks'
 
 function MintStudio({ network, setNetwork }) {
   const [selectedId, setSelectedId] = useState(rareContracts[0].id)
   const [mintLogs, setMintLogs] = useState([])
+  const [walletAddress, setWalletAddress] = useState('')
+  const [connected, setConnected] = useState(false)
+  const [pendingWallet, setPendingWallet] = useState(false)
+  const [pendingMint, setPendingMint] = useState(false)
+  const [walletError, setWalletError] = useState('')
 
   const selectedContract = useMemo(
     () => rareContracts.find((contract) => contract.id === Number(selectedId)),
     [selectedId],
   )
 
-  const handleMockMint = () => {
-    if (!selectedContract) return
-    const log = {
-      id: crypto.randomUUID(),
-      timestamp: new Date().toLocaleTimeString(),
-      contractName: selectedContract.name,
-      fee: selectedContract.feeStx,
-      network,
+  useEffect(() => {
+    const state = getWalletState()
+    setWalletAddress(state.address)
+    setConnected(state.connected)
+  }, [network])
+
+  const handleConnect = async () => {
+    setPendingWallet(true)
+    setWalletError('')
+    try {
+      const state = await connectWallet(network)
+      setWalletAddress(state.address)
+      setConnected(state.connected)
+    } catch (error) {
+      setWalletError(error?.message || 'Wallet connection was cancelled or rejected.')
+    } finally {
+      setPendingWallet(false)
     }
-    setMintLogs((prev) => [log, ...prev].slice(0, 6))
+  }
+
+  const handleDisconnect = () => {
+    const state = disconnectWallet()
+    setWalletAddress(state.address)
+    setConnected(state.connected)
+    setWalletError('')
+  }
+
+  const handleMint = async () => {
+    if (!selectedContract) return
+    if (!connected || !walletAddress) {
+      setWalletError('Connect a wallet before minting.')
+      return
+    }
+
+    setPendingMint(true)
+    setWalletError('')
+
+    try {
+      const txid = await callMint({
+        contractAddress: selectedContract.contractAddress,
+        contractName: selectedContract.name,
+        feeMicroStx: selectedContract.feeMicroStx,
+        network,
+        senderAddress: walletAddress,
+      })
+
+      const log = {
+        id: crypto.randomUUID(),
+        timestamp: new Date().toLocaleTimeString(),
+        contractName: selectedContract.name,
+        fee: selectedContract.feeStx,
+        network,
+        txid,
+        status: 'submitted',
+      }
+      setMintLogs((prev) => [log, ...prev].slice(0, 8))
+    } catch (error) {
+      const log = {
+        id: crypto.randomUUID(),
+        timestamp: new Date().toLocaleTimeString(),
+        contractName: selectedContract.name,
+        fee: selectedContract.feeStx,
+        network,
+        status: 'failed',
+        error: error?.message || 'Transaction rejected by wallet.',
+      }
+      setMintLogs((prev) => [log, ...prev].slice(0, 8))
+      setWalletError(log.error)
+    } finally {
+      setPendingMint(false)
+    }
   }
 
   return (
@@ -32,7 +99,7 @@ function MintStudio({ network, setNetwork }) {
       <SectionTitle
         eyebrow="Action"
         title="Mint Studio"
-        description="Connect your Stacks wallet in Hiro and call `mint` on any rare contract."
+        description="Wallet flow is powered by @stacks/connect and post-condition safety via @stacks/transactions."
       />
       <div className="mint-controls">
         <NetworkSelector network={network} onChange={setNetwork} />
@@ -47,20 +114,27 @@ function MintStudio({ network, setNetwork }) {
           </select>
         </label>
       </div>
-      <WalletConnectPanel />
+      <WalletConnectPanel
+        connected={connected}
+        walletAddress={walletAddress}
+        pending={pendingWallet}
+        onConnect={handleConnect}
+        onDisconnect={handleDisconnect}
+        error={walletError}
+      />
       <div className="mint-preview">
         <p>
           Contract ID:{' '}
           <code>{toContractId(selectedContract.contractAddress, selectedContract.name)}</code>
         </p>
         <p>Fee: {formatStx(selectedContract.feeStx)}</p>
-        <button type="button" onClick={handleMockMint}>
-          Save Mint Intent
+        <button type="button" onClick={handleMint} disabled={pendingMint}>
+          {pendingMint ? 'Waiting for signature...' : 'Mint with Wallet'}
         </button>
       </div>
       <ul className="mint-log" aria-label="Mint intents" aria-live="polite">
         {mintLogs.length === 0 ? (
-          <li className="empty-log">No mint intents yet. Save one to track your next transaction.</li>
+          <li className="empty-log">No mint transactions yet. Connect wallet and submit `mint`.</li>
         ) : (
           mintLogs.map((log) => <MintIntentItem key={log.id} log={log} />)
         )}

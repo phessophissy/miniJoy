@@ -243,6 +243,9 @@
 .wallet-panel small {
   color: var(--text-muted);
 }
+.wallet-panel .wallet-error {
+  color: #ffbfb0;
+}
 .steps-list {
   margin: 0.8rem 0 0;
   padding-left: 1.2rem;
@@ -322,6 +325,21 @@
 }
 .mint-log small {
   text-align: right;
+}
+.mint-row.submitted {
+  border: 1px solid rgba(104, 175, 118, 0.35);
+}
+.mint-row.failed {
+  border: 1px solid rgba(255, 130, 115, 0.35);
+}
+.mint-txid,
+.mint-error {
+  grid-column: 1 / -1;
+  overflow-wrap: anywhere;
+  font-size: 0.76rem;
+}
+.mint-error {
+  color: #ffd2c8;
 }
 .mint-log .empty-log {
   grid-template-columns: 1fr;

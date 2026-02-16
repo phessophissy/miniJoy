@@ -70,6 +70,10 @@ npm run frontend:install
 npm run frontend:dev
 ```
 
+Frontend wallet and transaction stack:
+- `@stacks/connect` for wallet connection and contract calls.
+- `@stacks/transactions` for Clarity/post-condition construction.
+
 ## Deploy to Mainnet
 
 1. Run `npm run settings:init` to create local `settings/*.toml` files from templates.

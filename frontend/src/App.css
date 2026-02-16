@@ -40,6 +40,15 @@
 .brand-wrap {
   display: grid;
 }
+.brand-line {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+.brand-line img {
+  width: 42px;
+  height: 42px;
+}
 .brand-title {
   font-size: 1.1rem;
 }

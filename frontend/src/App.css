@@ -4,6 +4,22 @@
   padding: 2.5rem 0 3rem;
   display: grid;
   gap: 1.2rem;
+  position: relative;
+}
+.app-shell::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    repeating-linear-gradient(
+      18deg,
+      rgba(255, 239, 191, 0.02) 0px,
+      rgba(255, 239, 191, 0.02) 2px,
+      rgba(0, 0, 0, 0) 4px,
+      rgba(0, 0, 0, 0) 8px
+    );
+  mix-blend-mode: screen;
 }
 .section {
   border: 1px solid rgba(255, 227, 189, 0.2);

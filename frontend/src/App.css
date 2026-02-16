@@ -237,6 +237,25 @@
 .steps-list li {
   color: var(--text-muted);
 }
+.stats-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 0.7rem;
+}
+.stat-chip {
+  border-radius: 14px;
+  border: 1px solid rgba(237, 198, 148, 0.25);
+  background: rgba(63, 35, 22, 0.56);
+  padding: 0.75rem;
+  display: grid;
+  gap: 0.2rem;
+}
+.stat-chip small {
+  color: var(--text-muted);
+}
+.stat-chip strong {
+  font-size: 1.06rem;
+}
 @media (max-width: 760px) {
   .top-header {
     align-items: start;

@@ -1,8 +1,10 @@
 import './App.css'
+import Header from './components/Header'
 
 function App() {
   return (
     <main className="app-shell">
+      <Header />
       <header className="section hero">
         <p className="eyebrow">Bitcoin L2 NFTs</p>
         <h1>miniJoy</h1>

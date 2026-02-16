@@ -162,6 +162,11 @@
   font-size: 0.76rem;
   color: var(--wood-100);
 }
+.copy-button {
+  justify-self: start;
+  font-size: 0.78rem;
+  padding: 0.44rem 0.8rem;
+}
 .mint-controls {
   margin-top: 1rem;
   display: grid;

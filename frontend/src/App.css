@@ -158,3 +158,13 @@
   margin: 0;
   color: var(--text-muted);
 }
+.footer {
+  text-align: center;
+}
+.footer p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+.footer small {
+  color: var(--text-muted);
+}

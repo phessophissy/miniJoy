@@ -133,3 +133,8 @@
   background: rgba(43, 23, 13, 0.58);
   color: var(--text-muted);
 }
+.mint-log .empty-log {
+  grid-template-columns: 1fr;
+  text-align: center;
+  color: var(--text-muted);
+}

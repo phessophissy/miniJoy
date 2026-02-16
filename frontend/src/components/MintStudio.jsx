@@ -52,13 +52,17 @@ function MintStudio({ network, setNetwork }) {
         </button>
       </div>
       <ul className="mint-log" aria-label="Mint intents">
-        {mintLogs.map((log) => (
-          <li key={log.id}>
-            <strong>{log.contractName}</strong>
-            <span>{log.network}</span>
-            <span>{log.fee} STX</span>
-          </li>
-        ))}
+        {mintLogs.length === 0 ? (
+          <li className="empty-log">No mint intents yet. Save one to track your next transaction.</li>
+        ) : (
+          mintLogs.map((log) => (
+            <li key={log.id}>
+              <strong>{log.contractName}</strong>
+              <span>{log.network}</span>
+              <span>{log.fee} STX</span>
+            </li>
+          ))
+        )}
       </ul>
     </section>
   )

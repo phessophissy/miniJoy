@@ -1,6 +1,7 @@
 import { useMemo, useState } from 'react'
 import { rareContracts } from '../data/contracts'
 import { formatStx, toContractId } from '../utils/format'
+import MintIntentItem from './MintIntentItem'
 import NetworkSelector from './NetworkSelector'
 import SectionTitle from './SectionTitle'
 import WalletConnectPanel from './WalletConnectPanel'
@@ -61,13 +62,7 @@ function MintStudio({ network, setNetwork }) {
         {mintLogs.length === 0 ? (
           <li className="empty-log">No mint intents yet. Save one to track your next transaction.</li>
         ) : (
-          mintLogs.map((log) => (
-            <li key={log.id}>
-              <strong>{log.contractName}</strong>
-              <span>{log.network}</span>
-              <span>{log.fee} STX</span>
-            </li>
-          ))
+          mintLogs.map((log) => <MintIntentItem key={log.id} log={log} />)
         )}
       </ul>
     </section>

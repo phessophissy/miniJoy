@@ -5,6 +5,7 @@ import Footer from './components/Footer'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import MintStudio from './components/MintStudio'
+import WalletNotice from './components/WalletNotice'
 import { usePersistentState } from './hooks/usePersistentState'
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
     <main className="app-shell">
       <Header />
       <Hero />
+      <WalletNotice />
       <ContractsSection />
       <MintStudio network={network} setNetwork={setNetwork} />
       <FaqSection />

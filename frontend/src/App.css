@@ -260,3 +260,9 @@
   color: var(--accent-glow);
   font-size: 0.86rem;
 }
+.section-title h2 {
+  margin: 0;
+}
+.section-title .lead {
+  margin-top: 0.35rem;
+}

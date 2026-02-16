@@ -23,7 +23,12 @@ function ContractCard({ contract }) {
       <p className="contract-fee">Mint Fee: {formatStx(contract.feeStx)}</p>
       <p className="contract-fee-sub">{formatMicroStx(contract.feeMicroStx)}</p>
       <code>{contractId}</code>
-      <button className="copy-button" type="button" onClick={handleCopy}>
+      <button
+        className="copy-button"
+        type="button"
+        onClick={handleCopy}
+        aria-label={`Copy ${contract.name} contract id`}
+      >
         {copied ? 'Copied' : 'Copy Contract ID'}
       </button>
     </article>

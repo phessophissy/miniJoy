@@ -58,7 +58,7 @@ function MintStudio({ network, setNetwork }) {
           Save Mint Intent
         </button>
       </div>
-      <ul className="mint-log" aria-label="Mint intents">
+      <ul className="mint-log" aria-label="Mint intents" aria-live="polite">
         {mintLogs.length === 0 ? (
           <li className="empty-log">No mint intents yet. Save one to track your next transaction.</li>
         ) : (

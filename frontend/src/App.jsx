@@ -1,17 +1,12 @@
 import './App.css'
 import Header from './components/Header'
+import Hero from './components/Hero'
 
 function App() {
   return (
     <main className="app-shell">
       <Header />
-      <header className="section hero">
-        <p className="eyebrow">Bitcoin L2 NFTs</p>
-        <h1>miniJoy</h1>
-        <p className="lead">
-          Five rare NFT contracts on Stacks, crafted with a carved-wood visual style.
-        </p>
-      </header>
+      <Hero />
       <section className="section placeholder">
         <h2>Rarity Contracts</h2>
         <p>Contract cards will appear here.</p>

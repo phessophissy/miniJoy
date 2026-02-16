@@ -1,0 +1,32 @@
+const entries = [
+  {
+    q: 'Why are there five contracts?',
+    a: 'Each rare NFT has its own contract address so rarity is isolated per contract.',
+  },
+  {
+    q: 'What are the mint fees?',
+    a: 'Fees range from 0.0001 STX to 0.001 STX depending on rarity tier.',
+  },
+  {
+    q: 'Can I mint directly in Hiro Sandbox?',
+    a: 'Yes. Copy the contract ID from a card and call the `mint` function in Sandbox.',
+  },
+]
+
+function FaqSection() {
+  return (
+    <section className="section" id="faq" aria-label="Frequently asked questions">
+      <h2>FAQ</h2>
+      <div className="faq-list">
+        {entries.map((entry) => (
+          <article key={entry.q} className="faq-item">
+            <h3>{entry.q}</h3>
+            <p>{entry.a}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+  )
+}
+
+export default FaqSection

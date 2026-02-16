@@ -1,6 +1,7 @@
 import './App.css'
 import ContractsSection from './components/ContractsSection'
 import FaqSection from './components/FaqSection'
+import Footer from './components/Footer'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import MintStudio from './components/MintStudio'
@@ -16,6 +17,7 @@ function App() {
       <ContractsSection />
       <MintStudio network={network} setNetwork={setNetwork} />
       <FaqSection />
+      <Footer />
     </main>
   )
 }

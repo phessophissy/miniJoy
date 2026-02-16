@@ -9,6 +9,7 @@ export const rareContracts = [
     tokenUri: 'ipfs://mini-joy/rare-1.json',
     maxSupply: 1,
     status: 'available',
+    rarityColor: '#d2b48c',
   },
   {
     id: 2,
@@ -20,6 +21,7 @@ export const rareContracts = [
     tokenUri: 'ipfs://mini-joy/rare-2.json',
     maxSupply: 1,
     status: 'available',
+    rarityColor: '#c0a266',
   },
   {
     id: 3,
@@ -31,6 +33,7 @@ export const rareContracts = [
     tokenUri: 'ipfs://mini-joy/rare-3.json',
     maxSupply: 1,
     status: 'available',
+    rarityColor: '#9fcf8a',
   },
   {
     id: 4,
@@ -42,6 +45,7 @@ export const rareContracts = [
     tokenUri: 'ipfs://mini-joy/rare-4.json',
     maxSupply: 1,
     status: 'available',
+    rarityColor: '#ff9262',
   },
   {
     id: 5,
@@ -53,5 +57,6 @@ export const rareContracts = [
     tokenUri: 'ipfs://mini-joy/rare-5.json',
     maxSupply: 1,
     status: 'available',
+    rarityColor: '#ffd86f',
   },
 ]

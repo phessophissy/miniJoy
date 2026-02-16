@@ -131,9 +131,26 @@
   margin: 0;
   font-size: 1rem;
 }
+.card-topline {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.4rem;
+  align-items: center;
+}
 .contract-rarity {
   margin: 0;
   color: var(--accent-gold);
+}
+.status-badge {
+  border-radius: 999px;
+  padding: 0.15rem 0.55rem;
+  font-size: 0.72rem;
+  text-transform: capitalize;
+  border: 1px solid rgba(237, 198, 148, 0.35);
+}
+.status-badge.available {
+  color: #c6f7cb;
+  background: rgba(52, 121, 59, 0.22);
 }
 .contract-fee,
 .contract-fee-sub {

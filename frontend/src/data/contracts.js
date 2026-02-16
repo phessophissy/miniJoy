@@ -8,6 +8,7 @@ export const rareContracts = [
     contractAddress: 'SP2KYZRNME33Y39GP3RKC90DQJ45EF1N0NZNVRE09',
     tokenUri: 'ipfs://mini-joy/rare-1.json',
     maxSupply: 1,
+    status: 'available',
   },
   {
     id: 2,
@@ -18,6 +19,7 @@ export const rareContracts = [
     contractAddress: 'SP2KYZRNME33Y39GP3RKC90DQJ45EF1N0NZNVRE09',
     tokenUri: 'ipfs://mini-joy/rare-2.json',
     maxSupply: 1,
+    status: 'available',
   },
   {
     id: 3,
@@ -28,6 +30,7 @@ export const rareContracts = [
     contractAddress: 'SP2KYZRNME33Y39GP3RKC90DQJ45EF1N0NZNVRE09',
     tokenUri: 'ipfs://mini-joy/rare-3.json',
     maxSupply: 1,
+    status: 'available',
   },
   {
     id: 4,
@@ -38,6 +41,7 @@ export const rareContracts = [
     contractAddress: 'SP2KYZRNME33Y39GP3RKC90DQJ45EF1N0NZNVRE09',
     tokenUri: 'ipfs://mini-joy/rare-4.json',
     maxSupply: 1,
+    status: 'available',
   },
   {
     id: 5,
@@ -48,5 +52,6 @@ export const rareContracts = [
     contractAddress: 'SP2KYZRNME33Y39GP3RKC90DQJ45EF1N0NZNVRE09',
     tokenUri: 'ipfs://mini-joy/rare-5.json',
     maxSupply: 1,
+    status: 'available',
   },
 ]

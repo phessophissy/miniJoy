@@ -273,6 +273,15 @@
   .header-nav.open {
     display: flex;
   }
+  .lead {
+    max-width: 100%;
+  }
+  .mint-log li {
+    grid-template-columns: 1fr 1fr;
+  }
+  .mint-log small {
+    text-align: left;
+  }
 }
 .mint-preview p {
   margin: 0 0 0.55rem;

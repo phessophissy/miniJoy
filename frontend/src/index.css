@@ -33,7 +33,13 @@ body {
   margin: 0;
   min-width: 320px;
   font-family: "Merriweather", "Georgia", serif;
-  background: linear-gradient(160deg, var(--wood-800), var(--wood-900));
+  background:
+    radial-gradient(circle at 20% 10%, rgba(255, 216, 169, 0.12), transparent 40%),
+    radial-gradient(circle at 90% 0%, rgba(173, 114, 72, 0.2), transparent 36%),
+    linear-gradient(160deg, var(--wood-800), var(--wood-900));
+}
+::selection {
+  background: rgba(242, 200, 121, 0.35);
 }
 
 button {

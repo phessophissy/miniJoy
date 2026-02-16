@@ -3,6 +3,7 @@ import { rareContracts } from '../data/contracts'
 import { formatStx, toContractId } from '../utils/format'
 import NetworkSelector from './NetworkSelector'
 import SectionTitle from './SectionTitle'
+import WalletConnectPanel from './WalletConnectPanel'
 
 function MintStudio({ network, setNetwork }) {
   const [selectedId, setSelectedId] = useState(rareContracts[0].id)
@@ -45,6 +46,7 @@ function MintStudio({ network, setNetwork }) {
           </select>
         </label>
       </div>
+      <WalletConnectPanel />
       <div className="mint-preview">
         <p>
           Contract ID:{' '}

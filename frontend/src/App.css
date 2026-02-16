@@ -251,3 +251,12 @@
 .footer small {
   color: var(--text-muted);
 }
+.wallet-notice {
+  display: grid;
+  gap: 0.4rem;
+}
+.wallet-notice code {
+  overflow-wrap: anywhere;
+  color: var(--accent-glow);
+  font-size: 0.86rem;
+}

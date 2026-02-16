@@ -1,4 +1,4 @@
-;; title: sip009-nft-trait
+;; title: sip009-nft-trait2
 ;; summary: SIP-009 compatible NFT trait for miniJoy contracts.
 
 (define-trait sip009-nft-trait

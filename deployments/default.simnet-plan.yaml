@@ -28,9 +28,9 @@ plan:
     - id: 0
       transactions:
         - emulated-contract-publish:
-            contract-name: sip009-nft-trait
+            contract-name: sip009-nft-trait2
             emulated-sender: STC5KHM41H6WHAST7MWWDD807YSPRQKJ68T330BQ
-            path: contracts/sip009-nft-trait.clar
+            path: contracts/sip009-nft-trait2.clar
             clarity-version: 4
         - emulated-contract-publish:
             contract-name: mini-joy-rare-1

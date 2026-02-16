@@ -9,10 +9,10 @@ plan:
     - id: 0
       transactions:
         - contract-publish:
-            contract-name: sip009-nft-trait
+            contract-name: sip009-nft-trait2
             expected-sender: SP2KYZRNME33Y39GP3RKC90DQJ45EF1N0NZNVRE09
             cost: 3770
-            path: contracts/sip009-nft-trait.clar
+            path: contracts/sip009-nft-trait2.clar
             anchor-block-only: true
             clarity-version: 4
         - contract-publish:

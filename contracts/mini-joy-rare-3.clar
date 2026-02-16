@@ -1,7 +1,7 @@
 ;; title: mini-joy-rare-3
 ;; summary: miniJoy Tier-3 NFT contract.
 
-(impl-trait .sip009-nft-trait.sip009-nft-trait)
+(impl-trait .sip009-nft-trait2.sip009-nft-trait)
 
 (define-non-fungible-token mini-joy-rare-3-token uint)
 

@@ -31,7 +31,7 @@ Mainnet deployment sender is set to:
 - `SP2KYZRNME33Y39GP3RKC90DQJ45EF1N0NZNVRE09`
 
 Expected mainnet contract IDs:
-- `SP2KYZRNME33Y39GP3RKC90DQJ45EF1N0NZNVRE09.sip009-nft-trait`
+- `SP2KYZRNME33Y39GP3RKC90DQJ45EF1N0NZNVRE09.sip009-nft-trait2`
 - `SP2KYZRNME33Y39GP3RKC90DQJ45EF1N0NZNVRE09.mini-joy-rare-1`
 - `SP2KYZRNME33Y39GP3RKC90DQJ45EF1N0NZNVRE09.mini-joy-rare-2`
 - `SP2KYZRNME33Y39GP3RKC90DQJ45EF1N0NZNVRE09.mini-joy-rare-3`
@@ -42,7 +42,7 @@ Expected mainnet contract IDs:
 
 ```text
 contracts/
-  sip009-nft-trait.clar
+  sip009-nft-trait2.clar
   mini-joy-rare-1.clar
   mini-joy-rare-2.clar
   mini-joy-rare-3.clar

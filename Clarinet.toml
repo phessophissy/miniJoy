@@ -6,8 +6,8 @@ telemetry = false
 cache_dir = './.cache'
 requirements = []
 
-[contracts.sip009-nft-trait]
-path = 'contracts/sip009-nft-trait.clar'
+[contracts.sip009-nft-trait2]
+path = 'contracts/sip009-nft-trait2.clar'
 clarity_version = 4
 epoch = 'latest'
 
@@ -15,31 +15,31 @@ epoch = 'latest'
 path = 'contracts/mini-joy-rare-1.clar'
 clarity_version = 4
 epoch = 'latest'
-depends_on = ['sip009-nft-trait']
+depends_on = ['sip009-nft-trait2']
 
 [contracts.mini-joy-rare-2]
 path = 'contracts/mini-joy-rare-2.clar'
 clarity_version = 4
 epoch = 'latest'
-depends_on = ['sip009-nft-trait']
+depends_on = ['sip009-nft-trait2']
 
 [contracts.mini-joy-rare-3]
 path = 'contracts/mini-joy-rare-3.clar'
 clarity_version = 4
 epoch = 'latest'
-depends_on = ['sip009-nft-trait']
+depends_on = ['sip009-nft-trait2']
 
 [contracts.mini-joy-rare-4]
 path = 'contracts/mini-joy-rare-4.clar'
 clarity_version = 4
 epoch = 'latest'
-depends_on = ['sip009-nft-trait']
+depends_on = ['sip009-nft-trait2']
 
 [contracts.mini-joy-rare-5]
 path = 'contracts/mini-joy-rare-5.clar'
 clarity_version = 4
 epoch = 'latest'
-depends_on = ['sip009-nft-trait']
+depends_on = ['sip009-nft-trait2']
 
 [repl.analysis]
 passes = ['check_checker']

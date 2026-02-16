@@ -138,3 +138,23 @@
   text-align: center;
   color: var(--text-muted);
 }
+.faq-list {
+  margin-top: 1rem;
+  display: grid;
+  gap: 0.7rem;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+}
+.faq-item {
+  border-radius: 12px;
+  background: rgba(54, 30, 18, 0.6);
+  padding: 0.8rem;
+  border: 1px solid rgba(236, 199, 151, 0.2);
+}
+.faq-item h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1rem;
+}
+.faq-item p {
+  margin: 0;
+  color: var(--text-muted);
+}

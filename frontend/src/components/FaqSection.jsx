@@ -18,6 +18,10 @@ const entries = [
     a: 'Each card includes the contract ID in the format ADDRESS.contract-name.',
   },
   {
+    q: 'Which wallet should I use?',
+    a: 'Any SIP-030 compatible wallet works. Leather is a common choice.',
+  },
+  {
     q: 'Can I mint directly in Hiro Sandbox?',
     a: 'Yes. Copy the contract ID from a card and call the `mint` function in Sandbox.',
   },

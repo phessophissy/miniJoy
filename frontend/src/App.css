@@ -181,6 +181,9 @@
   margin: 0;
   color: var(--text-muted);
 }
+.contract-fee {
+  font-weight: 600;
+}
 .contract-card code {
   overflow-wrap: anywhere;
   font-size: 0.76rem;

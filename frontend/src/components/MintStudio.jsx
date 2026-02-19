@@ -50,6 +50,7 @@ function MintStudio({ network, setNetwork }) {
     const state = getWalletState()
     setWalletAddress(state.address)
     setConnected(state.connected)
+    setWalletError('')
   }, [network])
 
   const handleConnect = async () => {

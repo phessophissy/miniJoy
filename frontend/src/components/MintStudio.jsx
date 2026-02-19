@@ -7,6 +7,20 @@ import SectionTitle from './SectionTitle'
 import WalletConnectPanel from './WalletConnectPanel'
 import { callMint, connectWallet, disconnectWallet, getWalletState } from '../lib/stacks'
 
+const formatTimestamp = (date) =>
+  new Intl.DateTimeFormat('en-US', {
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+  }).format(date)
+
+const MAX_LOGS = 8
+const networkLabels = {
+  mainnet: 'Stacks Mainnet',
+  testnet: 'Stacks Testnet',
+  sandbox: 'Hiro Sandbox',
+}
+
 function MintStudio({ network, setNetwork }) {
   const [selectedId, setSelectedId] = useState(rareContracts[0].id)
   const [mintLogs, setMintLogs] = useState([])
@@ -20,11 +34,23 @@ function MintStudio({ network, setNetwork }) {
     () => rareContracts.find((contract) => contract.id === Number(selectedId)),
     [selectedId],
   )
+  const networkLabel = networkLabels[network] || network
+  const isAvailable = selectedContract?.status === 'available'
+  const hasWallet = connected && walletAddress
+  const canMint = hasWallet && !pendingMint && isAvailable
+  const mintLabel = pendingMint
+    ? 'Waiting for signature...'
+    : !isAvailable
+      ? 'Mint unavailable'
+      : hasWallet
+        ? 'Mint with Wallet'
+        : 'Connect wallet to mint'
 
   useEffect(() => {
     const state = getWalletState()
     setWalletAddress(state.address)
     setConnected(state.connected)
+    setWalletError('')
   }, [network])
 
   const handleConnect = async () => {
@@ -48,6 +74,10 @@ function MintStudio({ network, setNetwork }) {
     setWalletError('')
   }
 
+  const handleClearLogs = () => {
+    setMintLogs([])
+  }
+
   const handleMint = async () => {
     if (!selectedContract) return
     if (!connected || !walletAddress) {
@@ -69,25 +99,25 @@ function MintStudio({ network, setNetwork }) {
 
       const log = {
         id: crypto.randomUUID(),
-        timestamp: new Date().toLocaleTimeString(),
+        timestamp: formatTimestamp(new Date()),
         contractName: selectedContract.name,
         fee: selectedContract.feeStx,
         network,
         txid,
         status: 'submitted',
       }
-      setMintLogs((prev) => [log, ...prev].slice(0, 8))
+      setMintLogs((prev) => [log, ...prev].slice(0, MAX_LOGS))
     } catch (error) {
       const log = {
         id: crypto.randomUUID(),
-        timestamp: new Date().toLocaleTimeString(),
+        timestamp: formatTimestamp(new Date()),
         contractName: selectedContract.name,
         fee: selectedContract.feeStx,
         network,
         status: 'failed',
         error: error?.message || 'Transaction rejected by wallet.',
       }
-      setMintLogs((prev) => [log, ...prev].slice(0, 8))
+      setMintLogs((prev) => [log, ...prev].slice(0, MAX_LOGS))
       setWalletError(log.error)
     } finally {
       setPendingMint(false)
@@ -127,14 +157,32 @@ function MintStudio({ network, setNetwork }) {
           Contract ID:{' '}
           <code>{toContractId(selectedContract.contractAddress, selectedContract.name)}</code>
         </p>
+        <p>Network: {networkLabel}</p>
         <p>Fee: {formatStx(selectedContract.feeStx)}</p>
-        <button type="button" onClick={handleMint} disabled={pendingMint}>
-          {pendingMint ? 'Waiting for signature...' : 'Mint with Wallet'}
+        <p>Status: {selectedContract.status}</p>
+        <p>Supply: {selectedContract.maxSupply}</p>
+        <button type="button" onClick={handleMint} disabled={!canMint}>
+          {mintLabel}
         </button>
       </div>
-      <ul className="mint-log" aria-label="Mint intents" aria-live="polite">
+      <button
+        type="button"
+        onClick={handleClearLogs}
+        disabled={mintLogs.length === 0}
+        aria-label="Clear mint log"
+      >
+        Clear mint log
+      </button>
+      <ul
+        className="mint-log"
+        aria-label="Mint intents"
+        aria-live="polite"
+        aria-busy={pendingMint}
+      >
         {mintLogs.length === 0 ? (
-          <li className="empty-log">No mint transactions yet. Connect wallet and submit `mint`.</li>
+          <li className="empty-log">
+            No mint transactions yet. This log keeps the last {MAX_LOGS} intents.
+          </li>
         ) : (
           mintLogs.map((log) => <MintIntentItem key={log.id} log={log} />)
         )}

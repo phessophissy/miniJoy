@@ -2,7 +2,7 @@ const metrics = [
   { label: 'Chain', value: 'Stacks' },
   { label: 'Contracts', value: '5' },
   { label: 'Supply per contract', value: '1' },
-  { label: 'Mint fee range', value: '0.0001 - 0.001 STX' },
+  { label: 'Mint fee (STX)', value: '0.0001 - 0.001' },
 ]
 
 function StatsStrip() {

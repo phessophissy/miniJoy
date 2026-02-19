@@ -9,7 +9,7 @@ function Hero() {
       <p className="eyebrow">Stacks NFT Collection</p>
       <h1>miniJoy</h1>
       <p className="lead">
-        Five rare NFT contracts on Stacks, crafted with a carved-wood visual style.
+        Five rare NFT contracts on Stacks, carved with a warm wood palette.
       </p>
     </section>
   )

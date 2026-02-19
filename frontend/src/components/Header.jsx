@@ -2,6 +2,7 @@ import { useState } from 'react'
 
 function Header() {
   const [open, setOpen] = useState(false)
+  const handleNavClick = () => setOpen(false)
 
   return (
     <header className="top-header section" aria-label="MiniJoy header">
@@ -27,6 +28,7 @@ function Header() {
         id="primary-navigation"
         className={`header-nav ${open ? 'open' : ''}`}
         aria-label="Primary navigation"
+        onClick={handleNavClick}
       >
         <a href="#contracts">Contracts</a>
         <a href="#mint">Mint</a>

@@ -5,6 +5,7 @@ function ContractCard({ contract }) {
   const [copied, setCopied] = useState(false)
   const [copyError, setCopyError] = useState('')
   const contractId = toContractId(contract.contractAddress, contract.name)
+  const statusLabel = contract.status === 'available' ? 'Available' : contract.status
 
   const handleCopy = async () => {
     try {
@@ -24,7 +25,7 @@ function ContractCard({ contract }) {
         <p className="contract-rarity" style={{ color: contract.rarityColor }}>
           {contract.rarity}
         </p>
-        <span className={`status-badge ${contract.status}`}>{contract.status}</span>
+        <span className={`status-badge ${contract.status}`}>{statusLabel}</span>
       </div>
       <h3>{contract.name}</h3>
       <p className="contract-fee">Mint Fee: {formatStx(contract.feeStx)}</p>

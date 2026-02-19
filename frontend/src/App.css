@@ -36,6 +36,7 @@
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
+  backdrop-filter: blur(6px);
 }
 .brand-wrap {
   display: grid;
@@ -63,6 +64,7 @@
 .header-nav a {
   color: var(--text-muted);
   font-size: 0.92rem;
+  transition: color 150ms ease;
 }
 .header-nav a:hover {
   color: var(--accent-gold);
@@ -147,6 +149,7 @@
   padding: 0.95rem;
   display: grid;
   gap: 0.4rem;
+  box-shadow: 0 12px 24px rgba(17, 8, 4, 0.35);
 }
 .contract-card h3 {
   margin: 0;
@@ -177,6 +180,9 @@
 .contract-fee-sub {
   margin: 0;
   color: var(--text-muted);
+}
+.contract-fee {
+  font-weight: 600;
 }
 .contract-card code {
   overflow-wrap: anywhere;
@@ -214,6 +220,8 @@
   border-radius: 14px;
   background: rgba(40, 22, 13, 0.6);
   border: 1px solid rgba(236, 199, 151, 0.25);
+  display: grid;
+  gap: 0.4rem;
 }
 .wallet-panel {
   margin-top: 1rem;
@@ -223,6 +231,7 @@
   background: rgba(39, 20, 12, 0.6);
   display: grid;
   gap: 0.55rem;
+  box-shadow: inset 0 0 0 1px rgba(16, 8, 4, 0.35);
 }
 .wallet-title {
   margin: 0;
@@ -322,6 +331,7 @@
   border-radius: 12px;
   background: rgba(43, 23, 13, 0.58);
   color: var(--text-muted);
+  border: 1px solid rgba(236, 199, 151, 0.16);
 }
 .mint-log small {
   text-align: right;
@@ -358,6 +368,9 @@
   padding: 0.8rem;
   border: 1px solid rgba(236, 199, 151, 0.2);
 }
+.faq-item:hover {
+  border-color: rgba(242, 200, 121, 0.45);
+}
 .faq-item h3 {
   margin: 0 0 0.35rem;
   font-size: 1rem;
@@ -368,6 +381,8 @@
 }
 .footer {
   text-align: center;
+  display: grid;
+  gap: 0.2rem;
 }
 .footer p {
   margin: 0;
@@ -390,4 +405,8 @@
 }
 .section-title .lead {
   margin-top: 0.35rem;
+}
+.section-title {
+  display: grid;
+  gap: 0.2rem;
 }

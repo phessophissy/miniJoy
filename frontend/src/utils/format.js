@@ -9,3 +9,10 @@ export function formatMicroStx(value) {
 export function formatStx(value) {
   return `${value} STX`
 }
+
+export function formatStxRange(minValue, maxValue) {
+  if (minValue === maxValue) {
+    return `${minValue} STX`
+  }
+  return `${minValue} - ${maxValue} STX`
+}

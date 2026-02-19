@@ -86,6 +86,12 @@ Frontend wallet and transaction stack:
 - `@stacks/connect` for wallet connection and contract calls.
 - `@stacks/transactions` for Clarity/post-condition construction.
 
+## Networks
+
+- `mainnet`: use the production contract IDs listed above.
+- `testnet`: deploy using the Testnet plan in `deployments/`.
+- `sandbox`: use Hiro Sandbox and the contract ID from the UI cards.
+
 ## Deploy to Mainnet
 
 1. Run `npm run settings:init` to create local `settings/*.toml` files from templates.

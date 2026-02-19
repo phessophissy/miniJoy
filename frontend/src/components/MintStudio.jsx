@@ -29,6 +29,13 @@ function MintStudio({ network, setNetwork }) {
     () => rareContracts.find((contract) => contract.id === Number(selectedId)),
     [selectedId],
   )
+  const hasWallet = connected && walletAddress
+  const canMint = hasWallet && !pendingMint
+  const mintLabel = pendingMint
+    ? 'Waiting for signature...'
+    : hasWallet
+      ? 'Mint with Wallet'
+      : 'Connect wallet to mint'
 
   useEffect(() => {
     const state = getWalletState()
@@ -141,8 +148,8 @@ function MintStudio({ network, setNetwork }) {
           <code>{toContractId(selectedContract.contractAddress, selectedContract.name)}</code>
         </p>
         <p>Fee: {formatStx(selectedContract.feeStx)}</p>
-        <button type="button" onClick={handleMint} disabled={pendingMint}>
-          {pendingMint ? 'Waiting for signature...' : 'Mint with Wallet'}
+        <button type="button" onClick={handleMint} disabled={!canMint}>
+          {mintLabel}
         </button>
       </div>
       <button

@@ -54,6 +54,11 @@ h3 {
   letter-spacing: 0.01em;
   font-weight: 700;
 }
+ul,
+ol {
+  margin: 0;
+  padding-left: 1.2rem;
+}
 ::selection {
   background: rgba(242, 200, 121, 0.35);
 }

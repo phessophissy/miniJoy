@@ -1,5 +1,7 @@
+import { rareContracts } from '../data/contracts'
+
 const metrics = [
-  { label: 'Contracts', value: '5' },
+  { label: 'Contracts', value: String(rareContracts.length) },
   { label: 'Supply per contract', value: '1' },
   { label: 'Mint fee range', value: '0.0001 - 0.001 STX' },
 ]

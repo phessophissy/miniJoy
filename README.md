@@ -136,3 +136,8 @@ Each `mini-joy-rare-*` contract includes:
 - `transfer(token-id, sender, recipient)` for SIP-009 transfer compatibility.
 - `get-last-token-id()`, `get-token-uri(token-id)`, `get-owner(token-id)`.
 - `get-mint-fee()` and `get-rarity-label()` convenience readers.
+
+## Contributing
+
+- Keep contract interfaces aligned with SIP-009.
+- Update both README files when adjusting frontend behavior.

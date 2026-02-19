@@ -14,6 +14,10 @@ const entries = [
     a: 'Use mainnet for real mints, testnet for practice, and Sandbox for manual calls.',
   },
   {
+    q: 'Where do contract IDs come from?',
+    a: 'Each card includes the contract ID in the format ADDRESS.contract-name.',
+  },
+  {
     q: 'Can I mint directly in Hiro Sandbox?',
     a: 'Yes. Copy the contract ID from a card and call the `mint` function in Sandbox.',
   },

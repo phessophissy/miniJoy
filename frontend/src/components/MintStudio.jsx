@@ -15,6 +15,11 @@ const formatTimestamp = (date) =>
   }).format(date)
 
 const MAX_LOGS = 8
+const networkLabels = {
+  mainnet: 'Stacks Mainnet',
+  testnet: 'Stacks Testnet',
+  sandbox: 'Hiro Sandbox',
+}
 
 function MintStudio({ network, setNetwork }) {
   const [selectedId, setSelectedId] = useState(rareContracts[0].id)
@@ -29,6 +34,7 @@ function MintStudio({ network, setNetwork }) {
     () => rareContracts.find((contract) => contract.id === Number(selectedId)),
     [selectedId],
   )
+  const networkLabel = networkLabels[network] || network
   const hasWallet = connected && walletAddress
   const canMint = hasWallet && !pendingMint
   const mintLabel = pendingMint
@@ -147,6 +153,7 @@ function MintStudio({ network, setNetwork }) {
           Contract ID:{' '}
           <code>{toContractId(selectedContract.contractAddress, selectedContract.name)}</code>
         </p>
+        <p>Network: {networkLabel}</p>
         <p>Fee: {formatStx(selectedContract.feeStx)}</p>
         <button type="button" onClick={handleMint} disabled={!canMint}>
           {mintLabel}

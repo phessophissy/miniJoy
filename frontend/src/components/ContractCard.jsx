@@ -22,6 +22,7 @@ function ContractCard({ contract }) {
       <h3>{contract.name}</h3>
       <p className="contract-fee">Mint Fee: {formatStx(contract.feeStx)}</p>
       <p className="contract-fee-sub">{formatMicroStx(contract.feeMicroStx)}</p>
+      <p className="contract-fee-sub">Supply: {contract.maxSupply} of {contract.maxSupply}</p>
       <code>{contractId}</code>
       <button
         className="copy-button"

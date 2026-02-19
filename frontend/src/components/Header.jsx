@@ -21,6 +21,7 @@ function Header() {
         onClick={() => setOpen((value) => !value)}
         aria-expanded={open}
         aria-controls="primary-navigation"
+        aria-label="Toggle navigation"
       >
         Menu
       </button>

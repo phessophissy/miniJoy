@@ -1,4 +1,4 @@
-const deployerAddress = 'SP2KYZRNME33Y39GP3RKC90DQJ45EF1N0NZNVRE09'
+import { deployerAddress } from '../data/contracts'
 
 function WalletNotice() {
   return (

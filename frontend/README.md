@@ -33,6 +33,11 @@ Wood-themed React frontend for the `miniJoy` Stacks NFT project.
 - `npm run preview` serves the production bundle locally.
 - `npm run lint` runs ESLint across the frontend.
 
+## Wallet support
+
+- Use Leather or another SIP-030 wallet for mainnet/testnet.
+- Hiro Sandbox works for manual contract calls without wallet extensions.
+
 ## Run locally
 
 ```bash

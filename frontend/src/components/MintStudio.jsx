@@ -14,6 +14,8 @@ const formatTimestamp = (date) =>
     second: '2-digit',
   }).format(date)
 
+const MAX_LOGS = 8
+
 function MintStudio({ network, setNetwork }) {
   const [selectedId, setSelectedId] = useState(rareContracts[0].id)
   const [mintLogs, setMintLogs] = useState([])
@@ -83,7 +85,7 @@ function MintStudio({ network, setNetwork }) {
         txid,
         status: 'submitted',
       }
-      setMintLogs((prev) => [log, ...prev].slice(0, 8))
+      setMintLogs((prev) => [log, ...prev].slice(0, MAX_LOGS))
     } catch (error) {
       const log = {
         id: crypto.randomUUID(),
@@ -94,7 +96,7 @@ function MintStudio({ network, setNetwork }) {
         status: 'failed',
         error: error?.message || 'Transaction rejected by wallet.',
       }
-      setMintLogs((prev) => [log, ...prev].slice(0, 8))
+      setMintLogs((prev) => [log, ...prev].slice(0, MAX_LOGS))
       setWalletError(log.error)
     } finally {
       setPendingMint(false)

@@ -14,10 +14,20 @@ function Header() {
           </div>
         </div>
       </div>
-      <button className="menu-button" type="button" onClick={() => setOpen((value) => !value)}>
+      <button
+        className="menu-button"
+        type="button"
+        onClick={() => setOpen((value) => !value)}
+        aria-expanded={open}
+        aria-controls="primary-navigation"
+      >
         Menu
       </button>
-      <nav className={`header-nav ${open ? 'open' : ''}`} aria-label="Primary navigation">
+      <nav
+        id="primary-navigation"
+        className={`header-nav ${open ? 'open' : ''}`}
+        aria-label="Primary navigation"
+      >
         <a href="#contracts">Contracts</a>
         <a href="#mint">Mint</a>
         <a href="#faq">FAQ</a>

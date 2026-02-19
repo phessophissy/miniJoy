@@ -180,7 +180,9 @@ function MintStudio({ network, setNetwork }) {
         aria-busy={pendingMint}
       >
         {mintLogs.length === 0 ? (
-          <li className="empty-log">No mint transactions yet. Connect wallet and submit `mint`.</li>
+          <li className="empty-log">
+            No mint transactions yet. This log keeps the last {MAX_LOGS} intents.
+          </li>
         ) : (
           mintLogs.map((log) => <MintIntentItem key={log.id} log={log} />)
         )}

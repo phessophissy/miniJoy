@@ -9,7 +9,7 @@ const steps = [
 
 function MintSteps() {
   return (
-    <section className="section" aria-label="Mint steps">
+    <section className="section" id="steps" aria-label="Mint steps">
       <SectionTitle
         eyebrow="Guide"
         title="Mint Steps"

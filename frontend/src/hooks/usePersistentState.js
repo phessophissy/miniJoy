@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react'
 
 export function usePersistentState(key, defaultValue) {
   const [value, setValue] = useState(() => {
-    const raw = localStorage.getItem(key)
-    if (!raw) return defaultValue
     try {
+      const raw = localStorage.getItem(key)
+      if (!raw) return defaultValue
       return JSON.parse(raw)
     } catch {
       return defaultValue

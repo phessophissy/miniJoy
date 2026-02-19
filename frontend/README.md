@@ -38,6 +38,11 @@ Wood-themed React frontend for the `miniJoy` Stacks NFT project.
 - Use Leather or another SIP-030 wallet for mainnet/testnet.
 - Hiro Sandbox works for manual contract calls without wallet extensions.
 
+## Networks
+
+- The selector switches between mainnet, testnet, and Sandbox flows.
+- Network choice is stored in `localStorage` for convenience.
+
 ## Run locally
 
 ```bash

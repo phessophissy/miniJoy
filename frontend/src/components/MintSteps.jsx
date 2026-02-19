@@ -2,6 +2,7 @@ import SectionTitle from './SectionTitle'
 
 const steps = [
   'Open Hiro Sandbox or your preferred Stacks wallet.',
+  'Choose the target network (mainnet, testnet, or sandbox).',
   'Copy the contract ID from the card in this UI.',
   'Connect wallet using @stacks/connect and submit a `mint` call.',
   'Verify ownership using `get-owner` with token id `u1`.',

@@ -48,6 +48,11 @@ Wood-themed React frontend for the `miniJoy` Stacks NFT project.
 - Color palette and typography live in `src/index.css` as CSS variables.
 - Layout and component styles live in `src/App.css`.
 
+## Component map
+
+- `Hero`, `StatsStrip`, `ContractsSection`, and `MintStudio` render the main flow.
+- `WalletConnectPanel` and `NetworkSelector` handle wallet and network UI.
+
 ## Run locally
 
 ```bash

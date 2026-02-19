@@ -77,6 +77,11 @@ npm run check
 npm run check
 ```
 
+## Troubleshooting
+
+- If `clarinet` is missing, confirm it is in your PATH.
+- If checks fail after edits, rerun `npm run settings:init`.
+
 ## Frontend
 
 ```bash

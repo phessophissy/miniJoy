@@ -1,3 +1,5 @@
+import SectionTitle from './SectionTitle'
+
 const steps = [
   'Open Hiro Sandbox or your preferred Stacks wallet environment.',
   'Copy the contract ID from the card in this UI.',
@@ -8,7 +10,11 @@ const steps = [
 function MintSteps() {
   return (
     <section className="section" aria-label="Mint steps">
-      <h2>Mint Steps</h2>
+      <SectionTitle
+        eyebrow="Guide"
+        title="Mint Steps"
+        description="Follow these steps to mint a one-of-one rarity contract."
+      />
       <ol className="steps-list">
         {steps.map((step) => (
           <li key={step}>{step}</li>

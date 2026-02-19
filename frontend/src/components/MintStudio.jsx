@@ -7,6 +7,13 @@ import SectionTitle from './SectionTitle'
 import WalletConnectPanel from './WalletConnectPanel'
 import { callMint, connectWallet, disconnectWallet, getWalletState } from '../lib/stacks'
 
+const formatTimestamp = (date) =>
+  new Intl.DateTimeFormat('en-US', {
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+  }).format(date)
+
 function MintStudio({ network, setNetwork }) {
   const [selectedId, setSelectedId] = useState(rareContracts[0].id)
   const [mintLogs, setMintLogs] = useState([])
@@ -69,7 +76,7 @@ function MintStudio({ network, setNetwork }) {
 
       const log = {
         id: crypto.randomUUID(),
-        timestamp: new Date().toLocaleTimeString(),
+        timestamp: formatTimestamp(new Date()),
         contractName: selectedContract.name,
         fee: selectedContract.feeStx,
         network,
@@ -80,7 +87,7 @@ function MintStudio({ network, setNetwork }) {
     } catch (error) {
       const log = {
         id: crypto.randomUUID(),
-        timestamp: new Date().toLocaleTimeString(),
+        timestamp: formatTimestamp(new Date()),
         contractName: selectedContract.name,
         fee: selectedContract.feeStx,
         network,

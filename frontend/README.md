@@ -43,6 +43,11 @@ Wood-themed React frontend for the `miniJoy` Stacks NFT project.
 - The selector switches between mainnet, testnet, and Sandbox flows.
 - Network choice is stored in `localStorage` for convenience.
 
+## Design tokens
+
+- Color palette and typography live in `src/index.css` as CSS variables.
+- Layout and component styles live in `src/App.css`.
+
 ## Run locally
 
 ```bash

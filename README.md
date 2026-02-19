@@ -84,6 +84,10 @@ npm run frontend:install
 npm run frontend:dev
 ```
 
+Frontend notes:
+- Network selection persists locally in `localStorage`.
+- The UI expects wallet support for SIP-030 connections.
+
 Frontend wallet and transaction stack:
 - `@stacks/connect` for wallet connection and contract calls.
 - `@stacks/transactions` for Clarity/post-condition construction.

@@ -35,9 +35,9 @@ function FaqSection() {
   return (
     <section className="section" id="faq" aria-label="Frequently asked questions">
       <SectionTitle title="FAQ" description="Quick answers for deployment and minting flow." />
-      <div className="faq-list">
+      <div className="faq-list" role="list">
         {entries.map((entry) => (
-          <article key={entry.q} className="faq-item">
+          <article key={entry.q} className="faq-item" role="listitem">
             <h3>{entry.q}</h3>
             <p>{entry.a}</p>
           </article>

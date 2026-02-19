@@ -39,6 +39,7 @@ function ContractCard({ contract }) {
         onClick={handleCopy}
         aria-label={`Copy ${contract.name} contract id`}
         aria-live="polite"
+        title={contractId}
       >
         {copied ? 'Copied' : 'Copy Contract ID'}
       </button>

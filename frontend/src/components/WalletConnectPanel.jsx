@@ -5,6 +5,8 @@ function WalletConnectPanel({ connected, walletAddress, pending, onConnect, onDi
   const shortAddress = formatAddress(walletAddress)
   const [copied, setCopied] = useState(false)
   const [copyError, setCopyError] = useState('')
+  const statusLabel = connected ? 'Connected' : 'Disconnected'
+  const statusClass = connected ? 'online' : 'offline'
 
   const handleCopy = async () => {
     if (!walletAddress) return
@@ -21,7 +23,10 @@ function WalletConnectPanel({ connected, walletAddress, pending, onConnect, onDi
 
   return (
     <div className="wallet-panel">
-      <p className="wallet-title">Wallet Session</p>
+      <div className="wallet-header">
+        <p className="wallet-title">Wallet Session</p>
+        <span className={`wallet-status ${statusClass}`}>{statusLabel}</span>
+      </div>
       <label>
         <span>Connected Stacks Address</span>
         <input type="text" value={walletAddress} readOnly placeholder="Connect wallet to load address" />

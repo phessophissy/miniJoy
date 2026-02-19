@@ -10,6 +10,10 @@ const entries = [
     a: 'Fees range from 0.0001 STX to 0.001 STX depending on rarity tier.',
   },
   {
+    q: 'Which network should I use?',
+    a: 'Use mainnet for real mints, testnet for practice, and Sandbox for manual calls.',
+  },
+  {
     q: 'Can I mint directly in Hiro Sandbox?',
     a: 'Yes. Copy the contract ID from a card and call the `mint` function in Sandbox.',
   },

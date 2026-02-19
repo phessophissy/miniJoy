@@ -1,3 +1,5 @@
+export const deployerAddress = 'SP2KYZRNME33Y39GP3RKC90DQJ45EF1N0NZNVRE09'
+
 export const rareContracts = [
   {
     id: 1,
@@ -5,7 +7,7 @@ export const rareContracts = [
     rarity: 'Tier-1',
     feeStx: '0.0001',
     feeMicroStx: 100,
-    contractAddress: 'SP2KYZRNME33Y39GP3RKC90DQJ45EF1N0NZNVRE09',
+    contractAddress: deployerAddress,
     tokenUri: 'ipfs://mini-joy/rare-1.json',
     maxSupply: 1,
     status: 'available',
@@ -17,7 +19,7 @@ export const rareContracts = [
     rarity: 'Tier-2',
     feeStx: '0.00025',
     feeMicroStx: 250,
-    contractAddress: 'SP2KYZRNME33Y39GP3RKC90DQJ45EF1N0NZNVRE09',
+    contractAddress: deployerAddress,
     tokenUri: 'ipfs://mini-joy/rare-2.json',
     maxSupply: 1,
     status: 'available',
@@ -29,7 +31,7 @@ export const rareContracts = [
     rarity: 'Tier-3',
     feeStx: '0.0005',
     feeMicroStx: 500,
-    contractAddress: 'SP2KYZRNME33Y39GP3RKC90DQJ45EF1N0NZNVRE09',
+    contractAddress: deployerAddress,
     tokenUri: 'ipfs://mini-joy/rare-3.json',
     maxSupply: 1,
     status: 'available',
@@ -41,7 +43,7 @@ export const rareContracts = [
     rarity: 'Tier-4',
     feeStx: '0.00075',
     feeMicroStx: 750,
-    contractAddress: 'SP2KYZRNME33Y39GP3RKC90DQJ45EF1N0NZNVRE09',
+    contractAddress: deployerAddress,
     tokenUri: 'ipfs://mini-joy/rare-4.json',
     maxSupply: 1,
     status: 'available',
@@ -53,7 +55,7 @@ export const rareContracts = [
     rarity: 'Tier-5',
     feeStx: '0.001',
     feeMicroStx: 1000,
-    contractAddress: 'SP2KYZRNME33Y39GP3RKC90DQJ45EF1N0NZNVRE09',
+    contractAddress: deployerAddress,
     tokenUri: 'ipfs://mini-joy/rare-5.json',
     maxSupply: 1,
     status: 'available',

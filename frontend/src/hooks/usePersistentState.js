@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react'
 
 export function usePersistentState(key, defaultValue) {
   const [value, setValue] = useState(() => {
-    const raw = localStorage.getItem(key)
-    if (!raw) return defaultValue
     try {
+      const raw = localStorage.getItem(key)
+      if (!raw) return defaultValue
       return JSON.parse(raw)
     } catch {
       return defaultValue
@@ -12,7 +12,11 @@ export function usePersistentState(key, defaultValue) {
   })
 
   useEffect(() => {
-    localStorage.setItem(key, JSON.stringify(value))
+    try {
+      localStorage.setItem(key, JSON.stringify(value))
+    } catch {
+      // ignore write errors (private mode or disabled storage)
+    }
   }, [key, value])
 
   return [value, setValue]

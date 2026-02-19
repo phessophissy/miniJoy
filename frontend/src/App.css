@@ -391,3 +391,7 @@
 .section-title .lead {
   margin-top: 0.35rem;
 }
+.section-title {
+  display: grid;
+  gap: 0.2rem;
+}

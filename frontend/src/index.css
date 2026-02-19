@@ -10,6 +10,7 @@
   --wood-100: #f3e5d5;
   --accent-gold: #f2c879;
   --accent-glow: #ffefbf;
+  --shadow-soft: 0 16px 30px rgba(16, 9, 5, 0.45);
   --text-main: #f7efe5;
   --text-muted: #dcc5ab;
   color: var(--text-main);

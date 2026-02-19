@@ -368,6 +368,9 @@
   padding: 0.8rem;
   border: 1px solid rgba(236, 199, 151, 0.2);
 }
+.faq-item:hover {
+  border-color: rgba(242, 200, 121, 0.45);
+}
 .faq-item h3 {
   margin: 0 0 0.35rem;
   font-size: 1rem;

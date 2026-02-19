@@ -81,6 +81,12 @@ button:focus-visible {
   outline: 2px solid var(--accent-gold);
   outline-offset: 2px;
 }
+code {
+  font-family: "IBM Plex Mono", "Courier New", monospace;
+  background: rgba(17, 9, 5, 0.55);
+  padding: 0.1rem 0.35rem;
+  border-radius: 6px;
+}
 #root {
   min-height: 100vh;
 }

@@ -34,6 +34,10 @@ a {
   color: inherit;
   text-decoration: inherit;
 }
+a:focus-visible {
+  outline: 2px solid var(--accent-gold);
+  outline-offset: 2px;
+}
 img {
   max-width: 100%;
   display: block;

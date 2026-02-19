@@ -13,6 +13,7 @@ Wood-themed React frontend for the `miniJoy` Stacks NFT project.
 - 5 contract cards (one per rare NFT contract).
 - Mint studio UI with network selection and mint-intent history.
 - Steps and FAQ for Hiro Sandbox mint flow.
+- Wallet session panel with connect/disconnect status.
 
 ## Project structure
 

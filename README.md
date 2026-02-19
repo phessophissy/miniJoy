@@ -18,6 +18,7 @@ miniJoy is a Stacks (Bitcoin L2) NFT project forked from `miniNFT` and redesigne
 ## Contracts
 
 Each contract deploys to its own contract address (for example: `SP... .mini-joy-rare-1`).
+Contract IDs follow the format `ADDRESS.contract-name` and map 1:1 with each rarity.
 
 | Contract | Fee (microSTX) | Fee (STX) | Supply |
 |---|---:|---:|---:|

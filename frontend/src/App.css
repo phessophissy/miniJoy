@@ -224,6 +224,14 @@
   display: grid;
   gap: 0.55rem;
 }
+.wallet-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+.wallet-actions button {
+  flex: 1 1 160px;
+}
 .wallet-title {
   margin: 0;
   font-weight: 700;

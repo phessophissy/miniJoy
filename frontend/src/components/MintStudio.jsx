@@ -160,7 +160,12 @@ function MintStudio({ network, setNetwork }) {
       >
         Clear mint log
       </button>
-      <ul className="mint-log" aria-label="Mint intents" aria-live="polite">
+      <ul
+        className="mint-log"
+        aria-label="Mint intents"
+        aria-live="polite"
+        aria-busy={pendingMint}
+      >
         {mintLogs.length === 0 ? (
           <li className="empty-log">No mint transactions yet. Connect wallet and submit `mint`.</li>
         ) : (

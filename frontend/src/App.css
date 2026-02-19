@@ -217,6 +217,8 @@
   border-radius: 14px;
   background: rgba(40, 22, 13, 0.6);
   border: 1px solid rgba(236, 199, 151, 0.25);
+  display: grid;
+  gap: 0.4rem;
 }
 .wallet-panel {
   margin-top: 1rem;

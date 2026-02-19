@@ -228,6 +228,7 @@
   background: rgba(39, 20, 12, 0.6);
   display: grid;
   gap: 0.55rem;
+  box-shadow: inset 0 0 0 1px rgba(16, 8, 4, 0.35);
 }
 .wallet-title {
   margin: 0;

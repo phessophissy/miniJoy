@@ -11,6 +11,7 @@ function Hero() {
       <p className="lead">
         Five rare NFT contracts on Stacks, carved with a warm wood palette.
       </p>
+      <p className="lead">Each rarity is a one-of-one mint with its own contract address.</p>
     </section>
   )
 }

@@ -155,6 +155,8 @@ function MintStudio({ network, setNetwork }) {
         </p>
         <p>Network: {networkLabel}</p>
         <p>Fee: {formatStx(selectedContract.feeStx)}</p>
+        <p>Status: {selectedContract.status}</p>
+        <p>Supply: {selectedContract.maxSupply}</p>
         <button type="button" onClick={handleMint} disabled={!canMint}>
           {mintLabel}
         </button>

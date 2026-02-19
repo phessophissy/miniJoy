@@ -22,6 +22,10 @@ const entries = [
     a: 'Any SIP-030 compatible wallet works. Leather is a common choice.',
   },
   {
+    q: 'Do contracts enforce mint fees?',
+    a: 'Yes. Each contract enforces its configured mint fee on-chain.',
+  },
+  {
     q: 'Can I mint directly in Hiro Sandbox?',
     a: 'Yes. Copy the contract ID from a card and call the `mint` function in Sandbox.',
   },

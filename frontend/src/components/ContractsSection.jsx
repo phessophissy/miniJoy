@@ -8,7 +8,7 @@ function ContractsSection() {
       <SectionTitle
         eyebrow="Collection"
         title="Rarity Contracts"
-        description="Each rare NFT is deployed as its own contract address."
+        description="Each rarity is deployed to its own contract ID for isolated supply."
       />
       <div className="contracts-grid">
         {rareContracts.map((contract) => (

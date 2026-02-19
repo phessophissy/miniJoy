@@ -20,7 +20,7 @@ function ContractCard({ contract }) {
   }
 
   return (
-    <article className="contract-card">
+    <article className="contract-card" aria-label={`Contract ${contract.name}`}>
       <div className="card-topline">
         <p className="contract-rarity" style={{ color: contract.rarityColor }}>
           {contract.rarity}

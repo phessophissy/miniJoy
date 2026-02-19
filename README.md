@@ -10,9 +10,15 @@ miniJoy is a Stacks (Bitcoin L2) NFT project forked from `miniNFT` and redesigne
 - Project renamed to `miniJoy`.
 - uses @stacks/connect and @stacks/transactions
 
+## Prerequisites
+
+- Node.js 18+ for running the workspace scripts.
+- Clarinet installed locally for contract checks and deployments.
+
 ## Contracts
 
 Each contract deploys to its own contract address (for example: `SP... .mini-joy-rare-1`).
+Contract IDs follow the format `ADDRESS.contract-name` and map 1:1 with each rarity.
 
 | Contract | Fee (microSTX) | Fee (STX) | Supply |
 |---|---:|---:|---:|
@@ -25,6 +31,7 @@ Each contract deploys to its own contract address (for example: `SP... .mini-joy
 Notes:
 - `1 STX = 1,000,000 microSTX`.
 - The minimum mint fee in this range is `100 microSTX` (`0.0001 STX`).
+- Each contract enforces its mint fee on-chain.
 
 ## Deployer Wallet
 
@@ -57,11 +64,29 @@ settings/
 Clarinet.toml
 ```
 
+## Quick Start
+
+```bash
+npm install
+npm run check
+```
+
 ## Local Checks
 
 ```bash
 npm run check
 ```
+
+## Common Scripts
+
+- `npm run check` runs settings init and contract checks.
+- `npm run deploy:generate` builds a mainnet deployment plan.
+- `npm run deploy:testnet` applies the testnet plan.
+
+## Troubleshooting
+
+- If `clarinet` is missing, confirm it is in your PATH.
+- If checks fail after edits, rerun `npm run settings:init`.
 
 ## Frontend
 
@@ -70,11 +95,25 @@ npm run frontend:install
 npm run frontend:dev
 ```
 
+Frontend notes:
+- Network selection persists locally in `localStorage`.
+- The UI expects wallet support for SIP-030 connections.
+
 Frontend wallet and transaction stack:
 - `@stacks/connect` for wallet connection and contract calls.
 - `@stacks/transactions` for Clarity/post-condition construction.
 
+## Networks
+
+- `mainnet`: use the production contract IDs listed above.
+- `testnet`: deploy using the Testnet plan in `deployments/`.
+- `sandbox`: use Hiro Sandbox and the contract ID from the UI cards.
+
 ## Deploy to Mainnet
+
+Checklist:
+- Verify `settings/Mainnet.toml` uses the intended deployer mnemonic.
+- Confirm contract fees and supply counts before generating plans.
 
 1. Run `npm run settings:init` to create local `settings/*.toml` files from templates.
 2. Replace mnemonic in `settings/Mainnet.toml` with the seed phrase for `SP2KYZRNME33Y39GP3RKC90DQJ45EF1N0NZNVRE09`.
@@ -97,3 +136,8 @@ Each `mini-joy-rare-*` contract includes:
 - `transfer(token-id, sender, recipient)` for SIP-009 transfer compatibility.
 - `get-last-token-id()`, `get-token-uri(token-id)`, `get-owner(token-id)`.
 - `get-mint-fee()` and `get-rarity-label()` convenience readers.
+
+## Contributing
+
+- Keep contract interfaces aligned with SIP-009.
+- Update both README files when adjusting frontend behavior.

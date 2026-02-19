@@ -3,12 +3,19 @@ import { formatMicroStx, formatStx, toContractId } from '../utils/format'
 
 function ContractCard({ contract }) {
   const [copied, setCopied] = useState(false)
+  const [copyError, setCopyError] = useState('')
   const contractId = toContractId(contract.contractAddress, contract.name)
 
   const handleCopy = async () => {
-    await navigator.clipboard.writeText(contractId)
-    setCopied(true)
-    setTimeout(() => setCopied(false), 1200)
+    try {
+      await navigator.clipboard.writeText(contractId)
+      setCopied(true)
+      setCopyError('')
+      setTimeout(() => setCopied(false), 1200)
+    } catch (error) {
+      setCopied(false)
+      setCopyError('Clipboard unavailable. Copy manually.')
+    }
   }
 
   return (
@@ -35,6 +42,7 @@ function ContractCard({ contract }) {
       >
         {copied ? 'Copied' : 'Copy Contract ID'}
       </button>
+      {copyError ? <small className="contract-fee-sub">{copyError}</small> : null}
     </article>
   )
 }

@@ -29,7 +29,15 @@ function WalletConnectPanel({ connected, walletAddress, pending, onConnect, onDi
       </div>
       <label>
         <span>Connected Stacks Address</span>
-        <input type="text" value={walletAddress} readOnly placeholder="Connect wallet to load address" />
+        <input
+          type="text"
+          value={walletAddress}
+          readOnly
+          aria-readonly="true"
+          spellCheck="false"
+          title={walletAddress}
+          placeholder="Connect wallet to load address"
+        />
       </label>
       <small>{shortAddress ? `Address: ${shortAddress}` : 'No address loaded yet.'}</small>
       <div className="wallet-actions">

@@ -10,6 +10,7 @@
   --wood-100: #f3e5d5;
   --accent-gold: #f2c879;
   --accent-glow: #ffefbf;
+  --shadow-soft: 0 16px 30px rgba(16, 9, 5, 0.45);
   --text-main: #f7efe5;
   --text-muted: #dcc5ab;
   color: var(--text-main);
@@ -20,6 +21,11 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 html {
   scroll-behavior: smooth;
 }
@@ -28,18 +34,44 @@ a {
   color: inherit;
   text-decoration: inherit;
 }
+a:focus-visible {
+  outline: 2px solid var(--accent-gold);
+  outline-offset: 2px;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
 
 body {
   margin: 0;
   min-width: 320px;
   font-family: "Merriweather", "Georgia", serif;
+  min-height: 100vh;
+  color: var(--text-main);
   background:
     radial-gradient(circle at 20% 10%, rgba(255, 216, 169, 0.12), transparent 40%),
     radial-gradient(circle at 90% 0%, rgba(173, 114, 72, 0.2), transparent 36%),
     linear-gradient(160deg, var(--wood-800), var(--wood-900));
 }
+h1,
+h2,
+h3 {
+  letter-spacing: 0.01em;
+  font-weight: 700;
+}
+ul,
+ol {
+  margin: 0;
+  padding-left: 1.2rem;
+}
 ::selection {
   background: rgba(242, 200, 121, 0.35);
+}
+hr {
+  border: none;
+  border-top: 1px solid rgba(236, 199, 151, 0.2);
+  margin: 1.5rem 0;
 }
 
 button {
@@ -68,6 +100,18 @@ button:focus,
 button:focus-visible {
   outline: 2px solid var(--accent-gold);
   outline-offset: 2px;
+}
+input,
+select,
+textarea {
+  font-family: inherit;
+  color: inherit;
+}
+code {
+  font-family: "IBM Plex Mono", "Courier New", monospace;
+  background: rgba(17, 9, 5, 0.55);
+  padding: 0.1rem 0.35rem;
+  border-radius: 6px;
 }
 #root {
   min-height: 100vh;

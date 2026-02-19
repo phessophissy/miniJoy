@@ -31,6 +31,7 @@ Contract IDs follow the format `ADDRESS.contract-name` and map 1:1 with each rar
 Notes:
 - `1 STX = 1,000,000 microSTX`.
 - The minimum mint fee in this range is `100 microSTX` (`0.0001 STX`).
+- Each contract enforces its mint fee on-chain.
 
 ## Deployer Wallet
 

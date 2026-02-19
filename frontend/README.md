@@ -2,6 +2,11 @@
 
 Wood-themed React frontend for the `miniJoy` Stacks NFT project.
 
+## Prerequisites
+
+- Node.js 18+ and npm.
+- A SIP-030 compatible wallet (Leather, Xverse) for live minting.
+
 ## Features
 
 - Wooden visual direction with warm tones and grain textures.

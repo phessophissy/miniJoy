@@ -36,6 +36,7 @@
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
+  backdrop-filter: blur(6px);
 }
 .brand-wrap {
   display: grid;

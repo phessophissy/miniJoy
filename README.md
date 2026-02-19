@@ -77,6 +77,12 @@ npm run check
 npm run check
 ```
 
+## Common Scripts
+
+- `npm run check` runs settings init and contract checks.
+- `npm run deploy:generate` builds a mainnet deployment plan.
+- `npm run deploy:testnet` applies the testnet plan.
+
 ## Troubleshooting
 
 - If `clarinet` is missing, confirm it is in your PATH.

@@ -12,7 +12,11 @@ export function usePersistentState(key, defaultValue) {
   })
 
   useEffect(() => {
-    localStorage.setItem(key, JSON.stringify(value))
+    try {
+      localStorage.setItem(key, JSON.stringify(value))
+    } catch {
+      // ignore write errors (private mode or disabled storage)
+    }
   }, [key, value])
 
   return [value, setValue]

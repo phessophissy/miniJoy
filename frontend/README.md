@@ -26,6 +26,13 @@ Wood-themed React frontend for the `miniJoy` Stacks NFT project.
 - `@stacks/connect` for wallet connect/disconnect and `stx_callContract` requests.
 - `@stacks/transactions` for post-condition generation (mint fee spend guard).
 
+## Scripts
+
+- `npm run dev` starts the Vite dev server.
+- `npm run build` generates the production bundle.
+- `npm run preview` serves the production bundle locally.
+- `npm run lint` runs ESLint across the frontend.
+
 ## Run locally
 
 ```bash

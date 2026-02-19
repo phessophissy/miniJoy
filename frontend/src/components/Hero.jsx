@@ -6,7 +6,7 @@ function Hero() {
         <span />
         <span />
       </div>
-      <p className="eyebrow">Bitcoin L2 NFTs</p>
+      <p className="eyebrow">Stacks NFT Collection</p>
       <h1>miniJoy</h1>
       <p className="lead">
         Five rare NFT contracts on Stacks, crafted with a carved-wood visual style.

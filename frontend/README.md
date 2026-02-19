@@ -73,3 +73,8 @@ npm run dev
 npm run build
 npm run preview
 ```
+
+## Troubleshooting
+
+- If wallets fail to connect, confirm the network matches your wallet setting.
+- If styles look off, clear the Vite cache and restart `npm run dev`.

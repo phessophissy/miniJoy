@@ -10,6 +10,11 @@ miniJoy is a Stacks (Bitcoin L2) NFT project forked from `miniNFT` and redesigne
 - Project renamed to `miniJoy`.
 - uses @stacks/connect and @stacks/transactions
 
+## Prerequisites
+
+- Node.js 18+ for running the workspace scripts.
+- Clarinet installed locally for contract checks and deployments.
+
 ## Contracts
 
 Each contract deploys to its own contract address (for example: `SP... .mini-joy-rare-1`).

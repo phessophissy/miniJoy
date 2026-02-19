@@ -57,6 +57,10 @@ function MintStudio({ network, setNetwork }) {
     setWalletError('')
   }
 
+  const handleClearLogs = () => {
+    setMintLogs([])
+  }
+
   const handleMint = async () => {
     if (!selectedContract) return
     if (!connected || !walletAddress) {
@@ -141,6 +145,14 @@ function MintStudio({ network, setNetwork }) {
           {pendingMint ? 'Waiting for signature...' : 'Mint with Wallet'}
         </button>
       </div>
+      <button
+        type="button"
+        onClick={handleClearLogs}
+        disabled={mintLogs.length === 0}
+        aria-label="Clear mint log"
+      >
+        Clear mint log
+      </button>
       <ul className="mint-log" aria-label="Mint intents" aria-live="polite">
         {mintLogs.length === 0 ? (
           <li className="empty-log">No mint transactions yet. Connect wallet and submit `mint`.</li>

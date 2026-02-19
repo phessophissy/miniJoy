@@ -233,6 +233,36 @@
   gap: 0.55rem;
   box-shadow: inset 0 0 0 1px rgba(16, 8, 4, 0.35);
 }
+.wallet-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+.wallet-status {
+  border-radius: 999px;
+  padding: 0.15rem 0.6rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1px solid rgba(236, 199, 151, 0.3);
+}
+.wallet-status.online {
+  color: #c6f7cb;
+  background: rgba(52, 121, 59, 0.22);
+}
+.wallet-status.offline {
+  color: #ffbfb0;
+  background: rgba(120, 46, 38, 0.35);
+}
+.wallet-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+.wallet-actions button {
+  flex: 1 1 160px;
+}
 .wallet-title {
   margin: 0;
   font-weight: 700;

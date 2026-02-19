@@ -2,6 +2,7 @@ import { useState } from 'react'
 
 function Header() {
   const [open, setOpen] = useState(false)
+  const handleNavClick = () => setOpen(false)
 
   return (
     <header className="top-header section" aria-label="MiniJoy header">
@@ -14,10 +15,22 @@ function Header() {
           </div>
         </div>
       </div>
-      <button className="menu-button" type="button" onClick={() => setOpen((value) => !value)}>
+      <button
+        className="menu-button"
+        type="button"
+        onClick={() => setOpen((value) => !value)}
+        aria-expanded={open}
+        aria-controls="primary-navigation"
+        aria-label="Toggle navigation"
+      >
         Menu
       </button>
-      <nav className={`header-nav ${open ? 'open' : ''}`} aria-label="Primary navigation">
+      <nav
+        id="primary-navigation"
+        className={`header-nav ${open ? 'open' : ''}`}
+        aria-label="Primary navigation"
+        onClick={handleNavClick}
+      >
         <a href="#contracts">Contracts</a>
         <a href="#mint">Mint</a>
         <a href="#faq">FAQ</a>

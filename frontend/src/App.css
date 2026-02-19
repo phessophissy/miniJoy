@@ -149,6 +149,7 @@
   padding: 0.95rem;
   display: grid;
   gap: 0.4rem;
+  box-shadow: 0 12px 24px rgba(17, 8, 4, 0.35);
 }
 .contract-card h3 {
   margin: 0;

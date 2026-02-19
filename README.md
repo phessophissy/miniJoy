@@ -62,6 +62,13 @@ settings/
 Clarinet.toml
 ```
 
+## Quick Start
+
+```bash
+npm install
+npm run check
+```
+
 ## Local Checks
 
 ```bash

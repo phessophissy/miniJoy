@@ -35,13 +35,16 @@ function MintStudio({ network, setNetwork }) {
     [selectedId],
   )
   const networkLabel = networkLabels[network] || network
+  const isAvailable = selectedContract?.status === 'available'
   const hasWallet = connected && walletAddress
-  const canMint = hasWallet && !pendingMint
+  const canMint = hasWallet && !pendingMint && isAvailable
   const mintLabel = pendingMint
     ? 'Waiting for signature...'
-    : hasWallet
-      ? 'Mint with Wallet'
-      : 'Connect wallet to mint'
+    : !isAvailable
+      ? 'Mint unavailable'
+      : hasWallet
+        ? 'Mint with Wallet'
+        : 'Connect wallet to mint'
 
   useEffect(() => {
     const state = getWalletState()

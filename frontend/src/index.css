@@ -44,6 +44,12 @@ body {
     radial-gradient(circle at 90% 0%, rgba(173, 114, 72, 0.2), transparent 36%),
     linear-gradient(160deg, var(--wood-800), var(--wood-900));
 }
+h1,
+h2,
+h3 {
+  letter-spacing: 0.01em;
+  font-weight: 700;
+}
 ::selection {
   background: rgba(242, 200, 121, 0.35);
 }

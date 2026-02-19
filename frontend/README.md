@@ -53,6 +53,12 @@ Wood-themed React frontend for the `miniJoy` Stacks NFT project.
 - `Hero`, `StatsStrip`, `ContractsSection`, and `MintStudio` render the main flow.
 - `WalletConnectPanel` and `NetworkSelector` handle wallet and network UI.
 
+## Mint flow
+
+1. Select a network and connect a wallet.
+2. Choose a rarity contract.
+3. Submit `mint` and track the transaction in the intent list.
+
 ## Run locally
 
 ```bash

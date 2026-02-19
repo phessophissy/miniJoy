@@ -111,6 +111,10 @@ Frontend wallet and transaction stack:
 
 ## Deploy to Mainnet
 
+Checklist:
+- Verify `settings/Mainnet.toml` uses the intended deployer mnemonic.
+- Confirm contract fees and supply counts before generating plans.
+
 1. Run `npm run settings:init` to create local `settings/*.toml` files from templates.
 2. Replace mnemonic in `settings/Mainnet.toml` with the seed phrase for `SP2KYZRNME33Y39GP3RKC90DQJ45EF1N0NZNVRE09`.
 3. Generate deployment plan:

@@ -3,6 +3,8 @@ import ContractCard from './ContractCard'
 import SectionTitle from './SectionTitle'
 
 function ContractsSection() {
+  const totalContracts = rareContracts.length
+
   return (
     <section className="section" id="contracts" aria-label="Rare contracts">
       <SectionTitle
@@ -10,6 +12,7 @@ function ContractsSection() {
         title="Rarity Contracts"
         description="Each rarity is deployed to its own contract ID for isolated supply."
       />
+      <p className="lead">Total contracts: {totalContracts}</p>
       <div className="contracts-grid">
         {rareContracts.map((contract) => (
           <ContractCard contract={contract} key={contract.id} />
